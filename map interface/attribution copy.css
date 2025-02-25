@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.map-section {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px;
+}
+
+.attributes-section {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px;
+    margin-top: 3%;
+}
+
+#location-display {
+    margin-top: 40px;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+.attributes-section .heading {
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+.attributes-section .main {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    width: 70%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    position: absolute; /* Position relative to the container */
+    bottom: 50px; /* Adjust the distance from the bottom */
+    right: 50px; /* Adjust the distance from the right */
+    background-color: #FF5722; /* Button color (bright orange) */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 15px 30px; /* Padding for the button */
+    font-family: monospace;
+    font-size: 16px; /* Font size */
+    letter-spacing: 0.75px;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+.btn:hover {
+    background-color: #E64A19; /* Darker orange on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA LOGIC</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        #instructions {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            z-index: 9999;
+            font: 11px monospace;
+        }
+
+        .node circle {
+            fill: #fff;
+            stroke: steelblue;
+            stroke-width: 1.5px;
+        }
+
+        .node text {
+            font: 11px monospace; /* Increased font size for better readability */
+        }
+
+        .link {
+            fill: none;
+            stroke: #ccc;
+            stroke-width: 1.5px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Centers content horizontally */
+        }
+
+        .step {
+            margin-bottom: 1000px; /* Space between steps */
+        }
+
+        #visualization {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 80vw;
+            height: 100vh;
+            pointer-events: none; /* Allow scrolling through the visualization */
+            overflow: visible; /* Ensure content is not clipped */
+        }
+    </style>
+</head>
+<body>
+
+      <!-- Instructions -->
+    <div id="instructions">
+        <strong>How to Explore</strong><br/>
+        • Scroll down to reveal more data<br/>
+        • Hover over nodes for details
+    </div>
+
+    <div id="visualization"></div>
+    <div class="step" data-step="0"></div>
+    <div class="step" data-step="1"></div>
+    <div class="step" data-step="2"></div>
+    <div class="step" data-step="3"></div>
+    <div class="step" data-step="4"></div>
+    <div class="step" data-step="5"></div>
+    <div class="step" data-step="6"></div>
+    <div class="step" data-step="7"></div>
+    <div class="step" data-step="8"></div>
+
+    <script>
+        console.log("Script loaded"); // Debugging: Check if script is running
+
+        const data = {
+            "name": "BUYER NAVIGATING HOUSING DATA IN ADDITION TO EXTREME WEATHER RISKS",
+            "children": [
+                {
+                    "name": "VULNERABLE COMMUNITY", // layer 1
+                    "children": [
+                        {
+                            "name": "FLOOD VULNERABILITY", // layer 2
+                            "children": [
+                                {"name": "MEDIAN HOUSEHOLD INCOME"}, // LAYER3
+                                {"name": "POPULATION EMPLOYED OVER 16 Y/O"},
+                                {"name": "POPULATION OVER 65Y/O"},
+                                {"name": "POPULATION UNDER 18 Y/O"},
+                                {"name": "PUBLIC ASSISTANCE INCOME/FOOD STAMP/SNAP"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "USER'S PERCEPTION OF RISK",
+                    "children": [
+                        {
+                            "name": "USER CHOICE IN MARKET ACTIVITY",
+                            "children": [
+                                {"name": "SALE PRICE"},
+                                {"name": "NUMBER OF HOMES SOLD"}
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "PUBLIC PERCEPTION OF RISK",
+                    "children": [
+                        {
+                            "name": "RISK ASSESSMENT (INSURANCE)",
+                            "children": [
+                                {
+                                    "name": "FLOOD RISK",
+                                    "children": [
+                                        {"name": "PROJECTED AREAS OF IMPACT"},
+                                        {"name": "HISTORIC IMPACT AREAS"}
+                                    ]
+                                },
+                                {
+                                    "name": "BUILDING AND CONTENT COST",
+                                    "children": [
+                                        {"name": "PROPERTY VALUE"},
+                                    ]
+                                },
+                                {
+                                    "name": "AGE AND DESIGN OF STRUCTURE",
+                                    "children": [
+                                        {"name": "BUILDING AGE"},
+                                        {"name": "BUILDING MATERIALS"}
+                                    ]
+                                },
+                                {
+                                    "name": "LOCATION OF STRUCTURE WITHIN THE BUILDING",
+                                    "children": [
+                                        {"name": "BASEMENT"},
+                                        {"name": "ELEVATED MACHINERY & EQUIPMENT DISCOUNT (ABOVE FIRST FLOOR)"}
+                                    ]
+                                },
+                                {
+                                    "name": "INSURANCE COVERAGE",
+                                    "children": [
+                                        {"name": "FLOOD ZONE"},
+                                        {"name": "FLOOD INSURANCE PREMIUMS"}
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "REGULATIONS",
+                            "children": [
+                                {
+                                    "name": "EMERGING REGULATIONS",
+                                    "children": [
+                                        {"name": "FFRMS (FLOOD AND FIRE RISK MANAGEMENT STRATEGIES) REDEFINES FLOODPLAIN"},
+                                        {"name": "FLOOD MITIGATION DISCOUNTS"}
+                                    ]
+                                },
+                                {
+                                    "name": "LAND/LOT",
+                                    "children": [
+                                        {"name": "BUILDING PERMIT (BUILDING UPGRADES)"},
+                                        {"name": "OWNERSHIP TYPE CHANGE"}
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        };
+
+        const margin = { top: 50, right: 300, bottom: 50, left: 300 }; // d3 viz margin
+        const svgWidth = window.innerWidth; // Use full window width
+        const svgHeight = window.innerHeight; // Use full window height
+
+        const svg = d3.select("#visualization").append("svg")
+            .attr("width", svgWidth)
+            .attr("height", svgHeight);
+
+        const g = svg.append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+
+        const root = d3.hierarchy(data);
+        const tree = d3.tree().size([svgHeight - margin.top - margin.bottom, svgWidth - margin.left - margin.right]);
+
+        let currentStep = 0;
+
+        function update(step) {
+            console.log(`Updating to step ${step}`); // Debugging: Check if update is called
+
+            // Flatten the hierarchy to show parent and children in sequence
+            const nodes = [];
+            const links = [];
+            let index = 0;
+
+            function traverse(node, depth) {
+                if (index > step) return;
+                nodes.push(node);
+                index++;
+
+                if (node.children && index <= step) {
+                    node.children.forEach(child => {
+                        links.push({ source: node, target: child });
+                        traverse(child, depth + 1);
+                    });
+                }
+            }
+
+            traverse(root, 0);
+
+            tree(root);
+
+            const link = g.selectAll(".link")
+                .data(links);
+
+            link.enter().append("path")
+                .attr("class", "link")
+                .merge(link)
+                .attr("d", d3.linkHorizontal()
+                    .x(d => d.y)
+                    .y(d => d.x));
+
+            link.exit().remove();
+
+            const node = g.selectAll(".node")
+                .data(nodes, d => d.id);
+
+            const nodeEnter = node.enter().append("g")
+                .attr("class", d => "node" + (d.children ? " node--internal" : " node--leaf"))
+                .attr("transform", d => `translate(${d.y},${d.x})`);
+
+            nodeEnter.append("circle")
+                .attr("r", 4.5);
+
+            nodeEnter.append("text")
+                .attr("dy", 3)
+                .attr("x", d => d.children ? -10 : 10) // Adjust position
+                .attr("text-anchor", d => d.children ? "end" : "start") // Align text
+                .style("font-size", "12px")
+                .each(function (d) {
+                    const words = d.data.name.split(" ");
+                    const lineHeight = 15; // Line spacing
+                    const maxWidth = 170; // Adjust for children wrapping
+                    let line = [];
+                    let lineNumber = 0;
+                    const textElem = d3.select(this);
+                    let tspan = textElem.append("tspan").attr("x", d.children ? -10 : 10);
+
+                    words.forEach(word => {
+                        const testLine = [...line, word].join(" ");
+                        tspan.text(testLine);
+                        if (tspan.node().getComputedTextLength() > maxWidth) {
+                            tspan.text(line.join(" "));
+                            line = [word];
+                            lineNumber++;
+                            tspan = textElem.append("tspan")
+                                .attr("x", d.children ? -10 : 10)
+                                .attr("dy", lineNumber * lineHeight)
+                                .text(word);
+                        } else {
+                            line.push(word);
+                        }
+                    });
+                });
+
+            node.exit().remove();
+        }
+
+        function handleScroll() {
+            const step = Math.floor(window.scrollY / 100);
+            if (step !== currentStep) {
+                currentStep = step;
+                update(currentStep);
+            }
+        }
+
+        // Dynamically set body height based on the number of steps
+        const numSteps = document.querySelectorAll(".step").length;
+        document.body.style.height = `${numSteps * 1000}px`;
+
+        window.addEventListener("scroll", handleScroll);
+
+        update(currentStep); // Initial render
+    </script>
+</body>
+</html>

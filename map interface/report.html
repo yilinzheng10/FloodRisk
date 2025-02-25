@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Property Report</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="reportstyles.css">
+</head>
+<body>
+  
+  <!-- PAGE HEADING -->
+  <div class="page-heading">
+    <div id="location-display">
+      <!-- Address will be inserted here -->
+    </div>
+    <p>How much is my home worth?</p>
+  </div>
+  
+  <!-- TOP SECTION (Two Cards) -->
+  <div class="top-section">
+    <!-- Left Card: Flood Risk Meter -->
+    <div class="card">
+      <h2>Property Risk</h2>
+      <!-- Flood Risk Meter Placeholder SVG -->
+      <div class="flood-risk-meter">
+        <svg width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
+          <!-- Gauge Arc (half circle from left to right) -->
+          <path d="M 30,110 A 80,80 0 0,1 190,110" stroke="#444" stroke-width="10" fill="none"/>
+          <!-- Tick Marks -->
+          <line x1="30" y1="110" x2="40" y2="110" stroke="#FF5722" stroke-width="2"/>
+          <line x1="53.43" y1="53.43" x2="60.5" y2="60.5" stroke="#FF5722" stroke-width="2"/>
+          <line x1="110" y1="30" x2="110" y2="40" stroke="#FF5722" stroke-width="2"/>
+          <line x1="166.57" y1="53.43" x2="159.5" y2="60.5" stroke="#FF5722" stroke-width="2"/>
+          <line x1="190" y1="110" x2="180" y2="110" stroke="#FF5722" stroke-width="2"/>
+          <!-- Tick Labels -->
+          <text x="30" y="95" font-size="12" fill="#FF5722" text-anchor="middle">0%</text>
+          <text x="53" y="38" font-size="12" fill="#FF5722" text-anchor="middle">25%</text>
+          <text x="110" y="15" font-size="12" fill="#FF5722" text-anchor="middle">50%</text>
+          <text x="167" y="38" font-size="12" fill="#FF5722" text-anchor="middle">75%</text>
+          <text x="190" y="95" font-size="12" fill="#FF5722" text-anchor="middle">100%</text>
+          <!-- Needle for 5% (example) -->
+          <line x1="110" y1="110" x2="62.44" y2="107" stroke="red" stroke-width="3"/>
+          <circle cx="110" cy="110" r="4" fill="red"/>
+          <text x="72" y="120" font-size="12" fill="red" text-anchor="middle">0.1%</text>
+        </svg>
+      </div>
+      <h3>0.1% chance flood occurrence</h3>
+      <p class="difference">Your property is <em>rarely</em> at risk.</p>
+      <p>Based on historical flood data and current flood risk factors.</p>
+      <div class="insight-box">
+        <strong>Insight</strong>: Your property is in a low-risk area and may have a higher value.
+      </div>
+    </div>
+    
+    <!-- Right Card: Predicted & Actual Prices -->
+    <div class="card">
+      <h2>Predicted Market Price (5 years)</h2>
+      <div class="highlight">$562,270</div>
+      <p class="difference">$30,982 <span>(+3.7%)</span></p>
+      <br><br>
+      <h2>Actual Property Cost (5 years)</h2> 
+      <div class="highlight">$541,175.00</div>
+      <p class="difference">-$21,095 <span>(-2.5%)</span></p>
+      <ul>
+        <li>Property Insurance: $9,000.00</li>
+        <li>Flood Insurance: $781.00</li>
+        <li>Possible Flood Damage Cost: $11,000.00</li>
+      </ul>
+      <div class="insight-box">
+        Based on all homes sold in the last 5 years.
+      </div>
+    </div>
+  </div><!-- END TOP SECTION -->
+  
+  <!-- BOTTOM SECTION (Two Cards: Left Table & Right Map) -->
+  <div class="bottom-section">
+    <!-- Left Table: Median Sold Price By Borough -->
+    <div class="table-card">
+      <h3>Median Sold Price By Borough</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Jan 2024</th>
+            <th>Jan 2025</th>
+            <th>Change YoY</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Queens</td>
+            <td>$610,000</td>
+            <td>$620,000</td>
+            <td class="change-pos">+1.6%</td>
+          </tr>
+          <tr>
+            <td>Bronx</td>
+            <td>$450,000</td>
+            <td>$445,000</td>
+            <td class="change-neg">-1.1%</td>
+          </tr>
+          <tr>
+            <td>Brooklyn</td>
+            <td>$700,000</td>
+            <td>$720,000</td>
+            <td class="change-pos">+2.9%</td>
+          </tr>
+          <tr>
+            <td>Manhattan</td>
+            <td>$1.15M</td>
+            <td>$1.12M</td>
+            <td class="change-neg">-2.6%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Right Table Card: My Risk Perception Map -->
+    <div class="table-card">
+      <h3>My Risk Perception Map</h3>
+      <!-- The map will be placed inside this card -->
+      <div id="map" style="width:100%; height:300px;"></div>
+    </div>
+  </div><!-- END BOTTOM SECTION -->
+  
+  <!-- FOOTER BUTTONS -->
+  <div class="footer-buttons">
+    <button class="home-button">Home</button>
+    <button id="downloadBtn">Download</button>
+    <button id="emailBtn">Email to me</button>
+  </div>
+  
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Load our custom script after the DOM is ready -->
+  <script src="reportscript.js"></script>
+</body>
+</html>

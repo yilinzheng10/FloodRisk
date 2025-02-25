@@ -1,0 +1,64 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background-color: #000;
+  color: #fff;
+}
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+/* Menu Styling */
+#menu {
+  position: fixed;
+  top: 500px;
+  left: 20px;
+  width: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  padding: 10px;
+  z-index: 10000;
+}
+#menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#menu li {
+  margin-bottom: 10px;
+}
+#menu a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+#menu a:hover {
+  color: lightblue;
+}
+/* Sources section styling */
+#sources {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+/* Modal styling */
+#modal-content {
+  position: fixed;
+  padding: 20px;
+  overflow: auto;
+  background-color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 20000;
+}

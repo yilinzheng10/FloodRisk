@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Attribution</title>
+  <link rel="stylesheet" href="attribution.css">
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="map-section">
+      <div id="map"></div>
+    </div>
+    <div class="attributes-section">
+      
+        <div id="location-display">
+            <!-- Address will be inserted here -->
+        </div>
+        <h4 class="heading">Risk Features</h4>
+        
+        <div class="layers-menu">
+            <p>Historic Flood</p>
+            <label><input type="checkbox" id="layer1"> Flood Frequency</label><br>
+            <label><input type="checkbox" id="layer2"> Sea level Rise</label><br>
+            <label><input type="checkbox" id="layer3"> Levee/flood barrier</label><br>
+
+            <p>Impervious Surface Coverage</p>
+            <label><input type="checkbox" id="layer4"> Zoning</label><br>
+            <label><input type="checkbox" id="layer5"> Green cover (subtract)</label><br>
+
+            <p>Flood Insurance</p>
+            <label><input type="checkbox" id="layer6"> Flood Premium</label><br>
+        </div>  
+
+        <br><hr><br>
+
+        <div id="results" style="display:none;">
+            <h4 class="heading">Risk Analysis</h4>
+
+            <p id="homePriceResult"></p>
+            <p id="insuranceResult"></p>
+        </div>
+
+
+      <button class="btn" onclick="redirectToAnswerPage()">Get My Personalized Risk Report</button>
+    </div>
+  </div>
+  <script src="attribution.js"></script>
+</body>
+</html>

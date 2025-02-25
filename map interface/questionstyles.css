@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: monospace;
+  background-color: #000; /* Black background */
+  color: #eee; /* Light text for contrast */
+}
+/* Main container: two columns */
+.container {
+  display: flex;
+  height: 100vh;
+}
+/* Left section styling */
+.left-section {
+  flex: 1;
+  /* Dark gradient for black background */
+  background: linear-gradient(to bottom, #222 0%, #000 70%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+.illustration {
+  max-width: 80%;
+  height: auto;
+}
+/* Right section styling */
+.right-section {
+  flex: 1;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+/* Form styling */
+#survey-form {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Question label */
+#question-label {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  display: block;
+  color: #eee;
+}
+
+/* Text input styling */
+#answer {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  background-color: #222;
+  color: #eee;
+  border: 2px solid #444;
+  border-radius: 6px;
+}
+/* Options container styling */
+#options-container {
+  margin-bottom: 20px;
+}
+/* Option button styling */
+.option-button {
+  display: inline-block;
+  margin: 5px 10px 5px 0;
+  padding: 10px 15px;
+  font-size: 1rem;
+  background-color: #000;
+  border: 2px solid #444;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  color: #eee;
+}
+.option-button:hover {
+  background-color: #E64A19; /* Darker orange on hover */
+  border-color: #E64A19;
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+.option-button.selected {
+  background-color:#E64A19;
+  color: white;
+}
+/* Next button styling */
+#next-button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #FF5722; /* Button color (bright orange) */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 15px; /* Rounded corners */
+  padding: 15px 30px; /* Padding for the button */
+  font-family: monospace;
+  font-size: 16px; /* Font size */
+  letter-spacing: 0.75px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth hover transition */
+  align-items: center;
+  margin-top: 60px;
+  font-family: monospace;
+  width: 100%;
+  display: block; /* ensures the button behaves as a block-level element */
+}
+#next-button:hover {
+  background-color: #E64A19; /* Darker orange on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+/* Map and search bar styling */
+#map {
+  height: 300px;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.search-bar input {
+  flex: 1;
+  padding: 5px;
+  font-size: 14px;
+  font-family: monospace;
+  margin: 10px;
+  border-radius: 8px;
+  border: 2px solid #444;
+  background-color: #222;
+  color: #eee;
+}
+.search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.search-bar img {
+  filter: brightness(0) invert(1);
+}

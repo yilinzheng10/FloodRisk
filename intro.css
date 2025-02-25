@@ -1,0 +1,90 @@
+/* Make sure the body and html take up full viewport height */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Roboto Mono', monospace; 
+  overflow: hidden; /* Prevent unwanted scrolling */
+}
+
+/* Fullscreen Background Canvas */
+canvas {
+  position: fixed; /* Keeps it as the background */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Push it behind everything */
+  display: block;
+}
+
+/* The main container fills the screen */
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* Ensure it stays above the canvas */
+}
+
+/* Foreground content container */
+.intro-content {
+  position: relative;
+  z-index: 2; /* Ensure it's on top of everything */
+  text-align: center;
+  max-width: 600px;
+  margin: 0 20px;
+  color: white; /* Make text readable over the dark background */
+}
+
+/* Headline text */
+.intro-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Subtext */
+.intro-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+/* Container for the two “buttons” */
+.options {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Each clickable option */
+.option {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.option:hover {
+  transform: scale(1.05);
+}
+
+/* Icon images inside the options */
+.option-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer area */
+.footer {
+  margin-top: 2rem;
+  opacity: 0.8;
+  z-index: 2; /* Ensure it's above the background */
+}
+.footer p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: white; /* Ensure readability */
+}

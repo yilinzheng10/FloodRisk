@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Attribution</title>
+    <link rel="stylesheet" href="attribution.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js for radar chart -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="map-section">
+            <div id="map"></div>
+        </div>
+        <div class="attributes-section">
+            <div id="location-display">
+                <!-- Address -->
+            </div>
+            <h4 class="heading">Location Matrix Value</h4>
+            <p class="main">This matrix represents the <u>key risk attributes</u> based on your selected location, driven by current neighborhood and historic flood conditions.</p>
+            <canvas id="radarChart"></canvas>
+            <button class="btn" onclick="redirectToAnswerPage()">Continue</button>
+        </div>
+    </div>
+    <script src="attribution.js"></script>
+</body>
+</html>
