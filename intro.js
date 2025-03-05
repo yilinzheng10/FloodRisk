@@ -104,6 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Click behavior for "Visualize Data"
     dataOption.addEventListener('click', () => {
-      window.location.href = 'systems_diagram.html';
+      window.location.href = 'systems_diagram1.html';
     });
   });

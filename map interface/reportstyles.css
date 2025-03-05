@@ -81,6 +81,10 @@
     color: #FF5722;
     font-weight: 600;
   }
+  .difference-pos {
+     color: #4caf50;
+     font-weight: 600;
+  }
   .insight-box {
     background: #1a1a1a;
     border-left: 4px solid #FF5722;

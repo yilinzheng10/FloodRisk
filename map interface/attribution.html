@@ -6,9 +6,14 @@
   <title>Property Attribution</title>
   <link rel="stylesheet" href="attribution.css">
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> 
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script> 
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Leaflet MarkerCluster Library -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
 </head>
 <body>
   <div class="container">
@@ -24,16 +29,17 @@
         
         <div class="layers-menu">
             <p>Historic Flood</p>
-            <label><input type="checkbox" id="layer1"> Flood Frequency</label><br>
-            <label><input type="checkbox" id="layer2"> Sea level Rise</label><br>
-            <label><input type="checkbox" id="layer3"> Levee/flood barrier</label><br>
+            <label><input type="checkbox" id="layer1"> Flood Frequency： Repetitve Flood </label><br>
+            <label><input type="checkbox" id="layer2"> Flood Levels </label><br>
+            <label><input type="checkbox" id="layer3"> Levee/flood barrier: </label><br>
 
-            <p>Impervious Surface Coverage</p>
+            <p>Property Information</p>
             <label><input type="checkbox" id="layer4"> Zoning</label><br>
-            <label><input type="checkbox" id="layer5"> Green cover (subtract)</label><br>
+            <label><input type="checkbox" id="layer5"> Green cover</label><br>
+            <label><input type="checkbox" id="layer6"> Building Age</label><br>
 
             <p>Flood Insurance</p>
-            <label><input type="checkbox" id="layer6"> Flood Premium</label><br>
+            <label><input type="checkbox" id="layer7"> Flood Premium Cost</label><br>
         </div>  
 
         <br><hr><br>

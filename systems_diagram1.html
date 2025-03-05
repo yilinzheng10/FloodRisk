@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>D3 Force Diagram with Adjustable Forces and Hover Tooltips</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+        color: #fff;
+        font-family: monospace;
+      }
+      svg {
+        width: 100vw;
+        height: 100vh;
+      }
+      .link {
+        stroke: #999;
+        stroke-opacity: 0.6;
+      }
+      .node circle {
+        stroke: #fff;
+        stroke-width: 1.5px;
+      }
+      .node text {
+        pointer-events: none;
+        font: 10px monospace;
+        fill: white;
+      }
+      /* Left-side Top Section: Buttons & Overview */
+      #topLeft {
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        width: 322px;
+        z-index: 10000;
+        font-family: monospace;
+      }
+
+      .btn-primary:hover {
+        background-color: #E64A19; /* Darker orange on hover */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+      }
+      .btn-primary {
+        padding: 10px 30px;
+        background-color: #FF5722; /* Button color (bright orange) */
+        color: white; /* Text color */
+        border: none; 
+        border-radius: 15px; 
+        font-family: monospace;
+        font-size: 15px; /* Font size */
+        letter-spacing: 0.75px;
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: all 0.3s ease; /* Smooth hover transition */
+        margin-bottom: 10px;
+      }
+      .btn-secondary:hover {
+        background-color: #E64A19; /* Darker orange on hover */
+        transform: scale(1.05); /* Slightly enlarge on hover */
+      }
+      .btn-secondary {
+        padding: 10px 30px;
+        margin: 10px;
+        background: transparent;
+        color: white;
+        border: none; 
+        font-family: monospace;
+        margin-bottom: 10px;
+        width: 300px;
+      }
+      .overview {
+        padding: 10px;
+        border: 1px solid white;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .overview h4 {
+        margin: 0 0 5px;
+      }
+      .overview p {
+        margin: 0;
+        font-size: 13px;
+      }
+      /* Left-side Menu */
+      #menu {
+        position: fixed;
+        top: 300px;
+        left: 10px;
+        width: 300px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid white;
+        padding: 10px;
+        z-index: 10000;
+      }
+      #menu h4 {
+        margin: 0 0 5px;
+      }      
+      #menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      #menu li {
+        margin-bottom: 5px;
+      }
+      #menu a {
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      #menu a:hover {
+        color: lightblue;
+      }
+      /* Force sliders */
+      #controls {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        width: 300px;
+        background: rgba(255,255,255,0.1);
+        border: 1px solid white;
+        padding: 10px;
+        z-index: 10000;
+        font-family: monospace;
+      }
+      #controls p, #controls label {
+        margin: 5px 0;
+      }
+      #controls output {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+      }
+      /* Slider styling: white track and thumb */
+      #controls input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+      }
+      #controls input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background: #fff;
+        border: 1px solid #ccc;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        margin-top: -5px;
+      }
+      #controls input[type="range"]::-webkit-slider-runnable-track {
+        background: #c9c9c9;
+        height: 6px;
+      }
+      #controls input[type="range"]::-moz-range-thumb {
+        background: #fff;
+        border: 1px solid #ccc;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      #controls input[type="range"]::-moz-range-track {
+        background: #fff;
+        height: 6px;
+      }
+      /* Tooltip styling */
+      .tooltip {
+        position: absolute;
+        background: rgba(255,255,255,0.9);
+        color: #000;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        pointer-events: none;
+        font: 12px monospace;
+      }
+      .tooltip {
+        position: absolute;
+        background: rgba(255,255,255,0.9);
+        color: #000;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        pointer-events: none;
+        font: 12px monospace;
+        max-width: 300px;       /* Limit the width */
+        white-space: normal;    /* Allow text to wrap */
+        word-wrap: break-word;  /* Ensure long words break */
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- Top left section: Buttons and Overview -->
+    <div id="topLeft">
+      <div class="buttons">
+        <button class="btn-primary">Back</button>
+        <!--<button class="btn-secondary">View Tool that developed from this research.</button>-->
+      </div>
+      <div class="overview">
+        <h4>Overview of Methodology</h4>
+        <p>
+          This is a visualization of mixed-methods, system-oriented approaches:
+          1. user data collection, 2. public datasets, 3. explorational research, 4. real estate trends and technology.
+          Through these datasets, identify feedback mechanisms (rising insurance costs &gt; reduced property demand &gt; economic decline &gt; increased vulnerability), and identify existing issues: exploring and building meaningful features.
+        </p>
+      </div>
+    </div>
+
+    <!-- Left-side Menu -->
+    <div id="menu">
+    <h4>click to the feature</h4>
+      <ul>
+        <li><a href="#" data-target="policyBox">Policy</a></li>
+        <li><a href="#" data-target="newsBox">News + Media</a></li>
+        <li><a href="#" data-target="floodDataBox">Flood Losses Data</a></li>
+        <li><a href="#" data-target="impactDataBox">Scale of Impact</a></li>
+        <li><a href="#" data-target="userPerceptionsBox">User Perceptions</a></li>
+      </ul>
+    </div>
+
+    <!-- Force Sliders -->
+    <div id="controls">
+      <div class="alpha_bar" onclick="updateAll();">
+        <div id="alpha_value"></div>
+      </div>
+      <div class="force">
+        <p>
+          <label>Center (X,Y)</label> – Shifts the view.
+        </p>
+        <label>
+          x
+          <output id="center_XSliderOutput">.5</output>
+          <input type="range" min="0" max="1" value=".5" step="0.01" oninput="d3.select('#center_XSliderOutput').text(value); forceProperties.center.x=value; updateAll();">
+        </label>
+        <label>
+          y
+          <output id="center_YSliderOutput">.5</output>
+          <input type="range" min="0" max="1" value=".5" step="0.01" oninput="d3.select('#center_YSliderOutput').text(value); forceProperties.center.y=value; updateAll();">
+        </label>
+      </div>
+
+      <!--<div class="force">
+        <p>
+          <label>
+            <input type="checkbox" onchange="forceProperties.forceX.enabled = this.checked; updateAll();"> force Y
+          </label> 
+        </p>
+        <label>
+          strength
+          <output id="forceX_StrengthSliderOutput">.1</output>
+          <input type="range" min="0" max="1" value=".1" step="0.01" oninput="d3.select('#forceX_StrengthSliderOutput').text(value); forceProperties.forceX.strength=value; updateAll();">
+        </label>
+        <label title="Force X position (multiplied by svg width)">
+          x
+          <output id="forceX_XSliderOutput">.5</output>
+          <input type="range" min="0" max="1" value=".5" step="0.01" oninput="d3.select('#forceX_XSliderOutput').text(value); forceProperties.forceX.x=value; updateAll();">
+        </label>
+      </div>
+
+      <div class="force">
+        <p>
+          <label>
+            <input type="checkbox" onchange="forceProperties.forceY.enabled = this.checked; updateAll();"> force X
+          </label> – Pulls nodes toward a X location.
+        </p>
+        <label>
+          strength
+          <output id="forceY_StrengthSliderOutput">.1</output>
+          <input type="range" min="0" max="1" value=".1" step="0.01" oninput="d3.select('#forceY_StrengthSliderOutput').text(value); forceProperties.forceY.strength=value; updateAll();">
+        </label>
+
+        <label title="Force Y position (multiplied by svg height)">
+          y
+          <output id="forceY_YSliderOutput">.5</output>
+          <input type="range" min="0" max="1" value=".5" step="0.01" oninput="d3.select('#forceY_YSliderOutput').text(value); forceProperties.forceY.y=value; updateAll();">
+        </label>
+      </div>-->
+
+      <div class="force">
+        <p>
+          <label>
+            <input type="checkbox" checked onchange="forceProperties.link.enabled = this.checked; updateAll();"> link
+          </label> – Sets link length.
+        </p>
+        <label title="Distance between linked nodes">
+          distance
+          <output id="link_DistanceSliderOutput">150</output>
+          <input type="range" min="50" max="300" value="150" step="1" oninput="d3.select('#link_DistanceSliderOutput').text(value); forceProperties.link.distance=value; updateAll();">
+        </label>
+        <!--<label title="Link iterations">
+          iterations
+          <output id="link_IterationsSliderOutput">1</output>
+          <input type="range" min="1" max="10" value="1" step="1" oninput="d3.select('#link_IterationsSliderOutput').text(value); forceProperties.link.iterations=value; updateAll();">
+        </label>-->
+
+      </div>
+    </div>
+
+    <svg></svg>
+
+    <script>
+      // Global force properties.
+      let forceProperties = {
+        center: { x: 0.5, y: 0.5 },
+        forceX: { enabled: false, strength: 0.1, x: 0.5 },
+        forceY: { enabled: false, strength: 0.1, y: 0.5 },
+        link: { enabled: true, distance: 150, iterations: 1 }
+      };
+
+      // Map node IDs to distinctive colors.
+      const branchColors = {
+        centerEllipseGroup: "#ffffff",         // Core: white
+        policyBox: "#0074D9",                    // Bold blue
+        policyParenBox: "#0074D9",
+        laInsuranceBox: "#0074D9",
+        newsBox: "#2ECC40",                      // Vivid green
+        newsParenBox: "#2ECC40",
+        "2024disasterBox": "#2ECC40",
+        floodDataBox: "#B10DC9",                 // Vivid purple
+        caseStudyBox: "#B10DC9",
+        gentrificationBox: "#B10DC9",
+        displacementBox: "#B10DC9",
+        impactDataBox: "#FF851B",                // Bold orange
+        userPerceptionsBox: "#FFDC00",           // Bright yellow
+        mediationBox: "#FFDC00",
+        coastalBox: "#FFDC00",
+        surveyBox: "#FFDC00"
+      };
+
+      // Define nodes.
+      const nodes = [
+        { id: "centerEllipseGroup", label: "Risk Perception &\nSystemic Vulnerability", group: 0, modalContent: "Context:\nnClimate change is increasing the frequency and intensity of extreme weather events, placing flood-prone communities at heightened risk. This central node serves as the hub of our analysis, integrating data from multiple sources to map systemic vulnerability. Our methodology combines historical data, climate modeling, and socio-economic analysis to highlight key areas of risk and guide adaptive strategies." },
+        { id: "policyBox", label: "Policy", group: 1, modalContent: "Policy Realities:\nFloodplain definitions and mitigation incentives often do not reflect projected climate impacts or local vulnerabilities. Our analysis leverages historical FEMA maps and current climate models to identify policy gaps and recommend adaptive measures for future risk management." },
+        { id: "newsBox", label: "News + Media", group: 1, modalContent: "News + Media Analysis:\nThis section aggregates current events and media reports on flood incidents and disaster responses. We analyze the frequency, tone, and impact of media coverage to assess public awareness and governmental responses to flood risks." },
+        { id: "floodDataBox", label: "Flood Losses Data", group: 1, modalContent: "Flood Losses Data:\nDetailed records of flood damages, including economic losses and recovery expenditures, are compiled from NOAA, FEMA, and insurance claims. This quantitative analysis provides insight into cost escalation and supports risk forecasting." },
+        { id: "impactDataBox", label: "Scale of Impact Data", group: 1, modalContent: "Scale of Impact Data:\nThis node examines the broader societal impact of flood events by integrating demographic data, property value assessments, and damage reports. Our multi-dimensional approach helps reveal patterns in community resilience and vulnerability." },
+        { id: "userPerceptionsBox", label: "User Perceptions", group: 1, modalContent: "Issues:\nHomebuyers lack tools to evaluate flood risk. Through surveys, focus groups, and statistical analysis, I explore the relationship between risk awareness, property investment decisions, and demographic factors." },
+        { id: "policyParenBox", label: "Insurance", group: 2, hoverOnly: true, hoverImage: "images/insurance.png", modalContent: "Insurance Industry Response:\nThis sub-node examines how insurance companies adapt to increasing flood risks. We analyze trends in premium adjustments, coverage limitations, and industry reports to understand the financial implications of flood-related disasters."},
+        { id: "newsParenBox", label: "LA wild fire", group: 2, modalContent: "Using the LA wild fire as a contextual benchmark, I compare media coverage and public response to similar catastrophic events. This analysis helps illuminate the interplay between disaster events and risk perception." },
+        { id: "2024disasterBox", label: "2024 Billion Dollar Disaster", group: 2, link: "https://www.ncei.noaa.gov/access/billions/", modalContent: "2024 Billion Dollar Disaster:\nThis node highlights significant financial losses from recent extreme weather events. Methodologically, I benchmark economic impacts using NOAA data to forecast potential future costs in disaster scenarios." },
+        { id: "mediationBox", label: "Community flood mediation efforts", group: 2, modalContent: "Community Flood Mediation Efforts:\nFocusing on local initiatives, this section documents mediation efforts that help resolve flood-related conflicts and enhance community resilience. Our approach includes qualitative case studies and interviews with community leaders." },
+        { id: "coastalBox", label: "Coastal/Flood Plain Residents", group: 2, modalContent: "Coastal/Flood Plain Residents:\nChallenges and resilience faced by residents in high-risk coastal and floodplain areas. Our analysis combines demographic data with economic studies to highlight patterns of displacement and adaptive strategies." },
+        { id: "surveyBox", label: "User Perceptions Data:\nFlood Risk & Buying Decisions", group: 2, modalContent: "Survey results show that the majority of responders' home buying decisions in relation to flood risk. Combining quantitative and qualitative data, our methodology analyzes awareness levels, behavioral responses, and socio-economic factors influencing purchase decisions.", link: "https://docs.google.com/spreadsheets/d/1HKOsLh_ABl5GAOpvg9aUi4kkMcHB8a-neF-K_wR-tP8/edit?usp=sharing" },
+        { id: "caseStudyBox", label: "Case Study City: NYC", group: 2, link: "dataExplorer.html", modalContent: "New York City is used as a case study to illustrate urban flood risk and mitigation, integrating historical flood, infrastructure, and policy data to develop comprehensive urban risk assessments." },
+        { id: "gentrificationBox", label: "Climate Gentrification", group: 3, link: "https://yilinzheng10.github.io/MAPBOX-Storytelling/" },
+        { id: "displacementBox", label: "Displacement Data", group: 3, modalContent: "Displacement:\nFocusing on the long-term impacts of recurring flood events, this node uses census data, migration reports, and property loss statistics to assess community displacement and its socio-economic consequences." },
+        { id: "laInsuranceBox", label: "LA wild fire to\nInsurance Industry", group: 3, link: "https://hbr.org/2025/01/the-la-fires-could-change-the-insurance-industry", modalContent: "LA Wild Fire Impact on Insurance:\nAnalyzing the ripple effects of the LA wild fire on the insurance industry, this section examines premium adjustments, risk recalibration, and market responses post-disaster." }
+      ];
+
+      // Define links.
+      const links = [
+        { source: "centerEllipseGroup", target: "policyBox" },
+        { source: "centerEllipseGroup", target: "newsBox" },
+        { source: "centerEllipseGroup", target: "floodDataBox" },
+        { source: "centerEllipseGroup", target: "impactDataBox" },
+        { source: "centerEllipseGroup", target: "userPerceptionsBox" },
+        { source: "policyBox", target: "policyParenBox" },
+        { source: "newsBox", target: "newsParenBox" },
+        { source: "newsBox", target: "2024disasterBox" },
+        { source: "userPerceptionsBox", target: "mediationBox" },
+        { source: "userPerceptionsBox", target: "coastalBox" },
+        { source: "userPerceptionsBox", target: "surveyBox" },
+        { source: "floodDataBox", target: "caseStudyBox" },
+        { source: "impactDataBox", target: "caseStudyBox" },
+        { source: "caseStudyBox", target: "gentrificationBox" },
+        { source: "caseStudyBox", target: "displacementBox" },
+        { source: "newsParenBox", target: "laInsuranceBox" },
+        { source: "policyParenBox", target: "laInsuranceBox" }
+      ];
+
+      const svg = d3.select("svg");
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+
+      // Create a force simulation with adjustable forces.
+      let simulation = d3.forceSimulation(nodes)
+          .force("link", d3.forceLink(links)
+            .id(d => d.id)
+            .distance(forceProperties.link.distance)
+            .iterations(forceProperties.link.iterations))
+          .force("charge", d3.forceManyBody().strength(-400))
+          .force("center", d3.forceCenter(width * forceProperties.center.x, height * forceProperties.center.y))
+          .force("forceX", forceProperties.forceX.enabled
+            ? d3.forceX(width * forceProperties.forceX.x).strength(forceProperties.forceX.strength)
+            : null)
+          .force("forceY", forceProperties.forceY.enabled
+            ? d3.forceY(height * forceProperties.forceY.y).strength(forceProperties.forceY.strength)
+            : null)
+          .force("collide", d3.forceCollide(50));
+
+      // Draw links.
+      const link = svg.append("g")
+          .attr("class", "links")
+        .selectAll("line")
+        .data(links)
+        .enter().append("line")
+          .attr("class", "link");
+
+      // Draw nodes.
+      const node = svg.append("g")
+          .attr("class", "nodes")
+        .selectAll("g")
+        .data(nodes)
+        .enter().append("g")
+          .call(d3.drag()
+              .on("start", dragstarted)
+              .on("drag", dragged)
+              .on("end", dragended));
+
+      // Append circles (smaller nodes).
+      node.append("circle")
+        .attr("r", d => 10 - d.group)  // New smaller radius values
+        .attr("fill", d => branchColors[d.id] || "#cccccc");
+
+      // Append text labels.
+      node.append("text")
+        .attr("dy", 3)
+        .attr("x", 25)
+        .text(d => d.label)
+        .style("fill", "white")
+        .style("font-size", "10px"); // Adjust text size as needed
+
+
+      // Tooltip for hover – shows modalContent (or image content if you add that later)
+      const tooltip = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .style("display", "none");
+
+      // Node hover event: show tooltip and add visual feedback.
+      node.on("mouseover", function(event, d) {
+        d3.select(this).select("circle")
+          .transition().duration(200)
+          .attr("stroke", "lightblue")
+          .attr("stroke-width", 3);
+        
+        let htmlContent = "";
+        if(d.hoverImage) {
+          htmlContent += `<img src="${d.hoverImage}" style="max-width:100%; display:block; margin-bottom:5px;">`;
+        }
+        if(d.modalContent) {
+          htmlContent += d.modalContent.replace(/\n/g, "<br>");
+        }
+        
+        if(htmlContent) {
+          tooltip.html(htmlContent)
+                .style("left", (event.pageX + 10) + "px")
+                .style("top", (event.pageY + 10) + "px")
+                .style("display", "block");
+        }
+      })
+      .on("mousemove", function(event, d) {
+          tooltip.style("left", (event.pageX + 10) + "px")
+                 .style("top", (event.pageY + 10) + "px");
+      })
+      .on("mouseout", function(event, d) {
+          d3.select(this).select("circle")
+            .transition().duration(200)
+            .attr("stroke", "#fff")
+            .attr("stroke-width", 1.5);
+          tooltip.style("display", "none");
+      })
+      .on("click", function(event, d) {
+          if(d.link) {
+            window.open(d.link, "_blank");
+          }
+      });
+
+      simulation.on("tick", () => {
+        link.attr("x1", d => d.source.x)
+            .attr("y1", d => d.source.y)
+            .attr("x2", d => d.target.x)
+            .attr("y2", d => d.target.y);
+        node.attr("transform", d => `translate(${d.x},${d.y})`);
+      });
+
+      function dragstarted(event, d) {
+        if (!event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+      }
+      function dragged(event, d) {
+        d.fx = event.x;
+        d.fy = event.y;
+      }
+      function dragended(event, d) {
+        if (!event.active) simulation.alphaTarget(0);
+        d.fx = null;
+        d.fy = null;
+      }
+
+      // Menu function: center a node when clicked.
+      function zoomToGroup(targetId) {
+        const target = nodes.find(n => n.id === targetId);
+        if (target) {
+          simulation.alpha(1).restart();
+          target.fx = width / 2;
+          target.fy = height / 2;
+          setTimeout(() => { target.fx = null; target.fy = null; }, 1000);
+        }
+      }
+
+      function setupMenu() {
+        const menuLinks = document.querySelectorAll("#menu a");
+        menuLinks.forEach(link => {
+          link.addEventListener("click", function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("data-target");
+            zoomToGroup(targetId);
+          });
+        });
+      }
+      setupMenu();
+
+      // Update simulation forces based on slider changes.
+      function updateAll() {
+        simulation.force("link")
+          .distance(forceProperties.link.distance)
+          .iterations(forceProperties.link.iterations);
+        simulation.force("center", d3.forceCenter(width * forceProperties.center.x, height * forceProperties.center.y));
+        if (forceProperties.forceX.enabled) {
+          simulation.force("forceX", d3.forceX(width * forceProperties.forceX.x).strength(forceProperties.forceX.strength));
+        } else {
+          simulation.force("forceX", null);
+        }
+        if (forceProperties.forceY.enabled) {
+          simulation.force("forceY", d3.forceY(height * forceProperties.forceY.y).strength(forceProperties.forceY.strength));
+        } else {
+          simulation.force("forceY", null);
+        }
+        simulation.alpha(1).restart();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const backOption = document.querySelector('.btn-primary'); // returns a single element
+        
+        backOption.addEventListener('click', () => {
+          window.history.back();
+        });
+      });
+    </script>
+  </body>
+</html>

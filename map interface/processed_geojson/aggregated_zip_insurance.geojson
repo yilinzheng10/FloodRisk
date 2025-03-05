@@ -1,0 +1,2885 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10001.0,
+                "avgBuildingCoverage": 915888.2936507936,
+                "avgContentsCoverage": 111499.60317460318,
+                "avgPremium": 5127.18253968254
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.97162698412698,
+                    40.755158730158726
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10002.0,
+                "avgBuildingCoverage": 384233.54591836734,
+                "avgContentsCoverage": 92359.05612244898,
+                "avgPremium": 2664.737244897959
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.09617346938775,
+                    40.729464285714286
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10003.0,
+                "avgBuildingCoverage": 220397.05159705158,
+                "avgContentsCoverage": 89483.78378378379,
+                "avgPremium": 1012.5773955773956
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.7027027027027
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10004.0,
+                "avgBuildingCoverage": 3262024.2296918766,
+                "avgContentsCoverage": 182110.9243697479,
+                "avgPremium": 12302.096638655463
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.00420168067227,
+                    40.69327731092437
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10005.0,
+                "avgBuildingCoverage": 2410353.5928143715,
+                "avgContentsCoverage": 167005.9880239521,
+                "avgPremium": 8365.245508982036
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.96766467065868,
+                    40.69640718562874
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10006.0,
+                "avgBuildingCoverage": 2910436.4661654136,
+                "avgContentsCoverage": 165968.04511278195,
+                "avgPremium": 14529.413533834586
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.00075187969925,
+                    40.69887218045113
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10007.0,
+                "avgBuildingCoverage": 3616009.053497942,
+                "avgContentsCoverage": 182369.13580246913,
+                "avgPremium": 7202.674897119342
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.98847736625515,
+                    40.70164609053498
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10009.0,
+                "avgBuildingCoverage": 462832.1758404137,
+                "avgContentsCoverage": 52427.3365349095,
+                "avgPremium": 2914.519763575914
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99534540081271,
+                    40.698522349464355
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10010.0,
+                "avgBuildingCoverage": 390142.4870466321,
+                "avgContentsCoverage": 106288.34196891192,
+                "avgPremium": 2801.7823834196893
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.00906735751295,
+                    40.696113989637304
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10011.0,
+                "avgBuildingCoverage": 792892.7048792042,
+                "avgContentsCoverage": 103007.91094268119,
+                "avgPremium": 4068.527238275699
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0002368545713,
+                    40.699431549028894
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10012.0,
+                "avgBuildingCoverage": 386183.6820083682,
+                "avgContentsCoverage": 87084.93723849373,
+                "avgPremium": 2535.3305439330543
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.00083682008369,
+                    40.702510460251055
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10013.0,
+                "avgBuildingCoverage": 1304706.164129224,
+                "avgContentsCoverage": 76119.79205347196,
+                "avgPremium": 5446.784998143335
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99313033791312,
+                    40.70018566654289
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10014.0,
+                "avgBuildingCoverage": 862650.1563721658,
+                "avgContentsCoverage": 86164.73807662237,
+                "avgPremium": 3080.5504300234556
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99988272087569,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10016.0,
+                "avgBuildingCoverage": 5172631.701631702,
+                "avgContentsCoverage": 186938.92773892774,
+                "avgPremium": 9197.221445221445
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.98834498834499,
+                    40.70349650349651
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10017.0,
+                "avgBuildingCoverage": 115361.44578313253,
+                "avgContentsCoverage": 114155.421686747,
+                "avgPremium": 839.5903614457832
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.790361445783134
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10018.0,
+                "avgBuildingCoverage": 35714.28571428572,
+                "avgContentsCoverage": 464285.71428571426,
+                "avgPremium": 4818.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.771428571428565
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10019.0,
+                "avgBuildingCoverage": 257772.47706422018,
+                "avgContentsCoverage": 169955.04587155965,
+                "avgPremium": 3292.169724770642
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.93761467889908,
+                    40.79724770642201
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10021.0,
+                "avgBuildingCoverage": 1690878.3050847459,
+                "avgContentsCoverage": 112434.91525423729,
+                "avgPremium": 3055.766101694915
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.87627118644068,
+                    40.77084745762712
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10022.0,
+                "avgBuildingCoverage": 223749.54954954956,
+                "avgContentsCoverage": 106054.05405405405,
+                "avgPremium": 1251.117117117117
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.79999999999999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10023.0,
+                "avgBuildingCoverage": 213102.4096385542,
+                "avgContentsCoverage": 103446.38554216867,
+                "avgPremium": 873.8975903614457
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.93373493975903,
+                    40.7933734939759
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10024.0,
+                "avgBuildingCoverage": 221311.47540983607,
+                "avgContentsCoverage": 101229.5081967213,
+                "avgPremium": 428.8524590163934
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10025.0,
+                "avgBuildingCoverage": 180806.15384615384,
+                "avgContentsCoverage": 65724.61538461539,
+                "avgPremium": 570.4384615384615
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.95153846153846,
+                    40.79153846153846
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10026.0,
+                "avgBuildingCoverage": 219133.33333333334,
+                "avgContentsCoverage": 104266.66666666667,
+                "avgPremium": 565.08
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.94933333333333,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10027.0,
+                "avgBuildingCoverage": 212539.39393939395,
+                "avgContentsCoverage": 141686.8686868687,
+                "avgPremium": 2190.989898989899
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9469696969697,
+                    40.79494949494949
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10028.0,
+                "avgBuildingCoverage": 232091.98473282444,
+                "avgContentsCoverage": 74450.76335877863,
+                "avgPremium": 1052.0610687022902
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.89427480916031,
+                    40.79389312977099
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10029.0,
+                "avgBuildingCoverage": 544986.0052562418,
+                "avgContentsCoverage": 21154.59921156373,
+                "avgPremium": 4105.776281208936
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9011826544021,
+                    40.79917871222076
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10030.0,
+                "avgBuildingCoverage": 161538.46153846153,
+                "avgContentsCoverage": 93076.92307692308,
+                "avgPremium": 396.12820512820514
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10031.0,
+                "avgBuildingCoverage": 200919.51219512196,
+                "avgContentsCoverage": 121836.58536585367,
+                "avgPremium": 679.3414634146342
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9451219512195,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10032.0,
+                "avgBuildingCoverage": 375000.0,
+                "avgContentsCoverage": 62600.0,
+                "avgPremium": 411.825
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10033.0,
+                "avgBuildingCoverage": 150000.0,
+                "avgContentsCoverage": 66800.0,
+                "avgPremium": 339.45
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.815
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10034.0,
+                "avgBuildingCoverage": 433253.5211267606,
+                "avgContentsCoverage": 71272.39436619719,
+                "avgPremium": 1690.9098591549296
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10035.0,
+                "avgBuildingCoverage": 377205.30726256984,
+                "avgContentsCoverage": 30545.740223463687,
+                "avgPremium": 3114.7988826815645
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90209497206705,
+                    40.79790502793296
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10036.0,
+                "avgBuildingCoverage": 207234.04255319148,
+                "avgContentsCoverage": 107736.17021276595,
+                "avgPremium": 1999.9148936170213
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99716312056738,
+                    40.776595744680854
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10037.0,
+                "avgBuildingCoverage": 601628.701594533,
+                "avgContentsCoverage": 31261.958997722097,
+                "avgPremium": 2730.250569476082
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.79999999999999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10038.0,
+                "avgBuildingCoverage": 546575.9349593496,
+                "avgContentsCoverage": 97815.44715447155,
+                "avgPremium": 6404.460162601626
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99569105691057,
+                    40.695853658536585
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10039.0,
+                "avgBuildingCoverage": 431296.5779467681,
+                "avgContentsCoverage": 44181.74904942966,
+                "avgPremium": 3068.152091254753
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90912547528518,
+                    40.7893536121673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10040.0,
+                "avgBuildingCoverage": 265277.77777777775,
+                "avgContentsCoverage": 81722.22222222222,
+                "avgPremium": 873.4027777777778
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10044.0,
+                "avgBuildingCoverage": 458134.23423423426,
+                "avgContentsCoverage": 77890.99099099099,
+                "avgPremium": 3731.738738738739
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.92522522522523,
+                    40.79999999999999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10065.0,
+                "avgBuildingCoverage": 293778.72340425535,
+                "avgContentsCoverage": 196986.62613981764,
+                "avgPremium": 2277.693009118541
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10069.0,
+                "avgBuildingCoverage": 970673.4375,
+                "avgContentsCoverage": 56837.5,
+                "avgPremium": 4042.1302083333335
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.003125,
+                    40.793749999999996
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10075.0,
+                "avgBuildingCoverage": 269558.82352941175,
+                "avgContentsCoverage": 82308.82352941176,
+                "avgPremium": 1971.4882352941177
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.95882352941176,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10128.0,
+                "avgBuildingCoverage": 367174.18879056047,
+                "avgContentsCoverage": 75641.88790560472,
+                "avgPremium": 4031.026548672566
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.89115044247788,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10280.0,
+                "avgBuildingCoverage": 23744274.35064935,
+                "avgContentsCoverage": 85271.1038961039,
+                "avgPremium": 21121.29220779221
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10282.0,
+                "avgBuildingCoverage": 12377812.5,
+                "avgContentsCoverage": 102187.5,
+                "avgPremium": 12202.171875
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10301.0,
+                "avgBuildingCoverage": 571498.2776089159,
+                "avgContentsCoverage": 98090.07092198581,
+                "avgPremium": 1323.4559270516718
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.1,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10302.0,
+                "avgBuildingCoverage": 233652.13414634147,
+                "avgContentsCoverage": 54962.881097560974,
+                "avgPremium": 1580.2301829268292
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.1,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10303.0,
+                "avgBuildingCoverage": 210213.75,
+                "avgContentsCoverage": 114962.36111111111,
+                "avgPremium": 950.0138888888889
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.18222222222222,
+                    40.599583333333335
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10304.0,
+                "avgBuildingCoverage": 265163.96181384247,
+                "avgContentsCoverage": 95913.60381861575,
+                "avgPremium": 1414.6241050119331
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.1,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10305.0,
+                "avgBuildingCoverage": 236131.7928941712,
+                "avgContentsCoverage": 43350.53736249842,
+                "avgPremium": 1129.9580225060058
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.10010115058793,
+                    40.599898849412064
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10306.0,
+                "avgBuildingCoverage": 227390.57856917923,
+                "avgContentsCoverage": 34048.57862643497,
+                "avgPremium": 1108.6544902808394
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.10006584409264,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10307.0,
+                "avgBuildingCoverage": 241569.8924731183,
+                "avgContentsCoverage": 80812.36559139784,
+                "avgPremium": 841.341935483871
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.20784946236559,
+                    40.5
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10308.0,
+                "avgBuildingCoverage": 246902.85773026315,
+                "avgContentsCoverage": 47249.87664473684,
+                "avgPremium": 1157.7323190789473
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.11803042763158,
+                    40.51800986842105
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10309.0,
+                "avgBuildingCoverage": 235404.4327931363,
+                "avgContentsCoverage": 83076.78741658722,
+                "avgPremium": 736.3984747378456
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.19957102001906,
+                    40.501858913250715
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10310.0,
+                "avgBuildingCoverage": 209618.5537583254,
+                "avgContentsCoverage": 68500.47573739296,
+                "avgPremium": 823.0789724072312
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.1,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10312.0,
+                "avgBuildingCoverage": 230592.759051186,
+                "avgContentsCoverage": 73416.44373105047,
+                "avgPremium": 672.9343677545925
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.19001248439452,
+                    40.52225789192081
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10314.0,
+                "avgBuildingCoverage": 224677.48368382888,
+                "avgContentsCoverage": 89852.57432922408,
+                "avgPremium": 781.7393038433647
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.16127628716461,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10451.0,
+                "avgBuildingCoverage": 756545.7875457875,
+                "avgContentsCoverage": 170743.58974358975,
+                "avgPremium": 4037.7179487179487
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.89963369963371,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10452.0,
+                "avgBuildingCoverage": 69020.0,
+                "avgContentsCoverage": 58100.0,
+                "avgPremium": 901.0545454545454
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10453.0,
+                "avgBuildingCoverage": 366517.85714285716,
+                "avgContentsCoverage": 61821.42857142857,
+                "avgPremium": 2843.5773809523807
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.89523809523809
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10454.0,
+                "avgBuildingCoverage": 413155.2083333333,
+                "avgContentsCoverage": 92259.72222222222,
+                "avgPremium": 5458.067708333333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10455.0,
+                "avgBuildingCoverage": 387508.4745762712,
+                "avgContentsCoverage": 219288.98305084746,
+                "avgPremium": 4113.3983050847455
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10456.0,
+                "avgBuildingCoverage": 171538.46153846153,
+                "avgContentsCoverage": 64769.230769230766,
+                "avgPremium": 329.53846153846155
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10457.0,
+                "avgBuildingCoverage": 282258.06451612903,
+                "avgContentsCoverage": 38193.54838709677,
+                "avgPremium": 380.61290322580646
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.81612903225806
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10458.0,
+                "avgBuildingCoverage": 100000.0,
+                "avgContentsCoverage": 50000.0,
+                "avgPremium": 361.0
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10459.0,
+                "avgBuildingCoverage": 310312.5,
+                "avgContentsCoverage": 89125.0,
+                "avgPremium": 2182.953125
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10460.0,
+                "avgBuildingCoverage": 297746.4788732394,
+                "avgContentsCoverage": 85718.30985915494,
+                "avgPremium": 1591.2112676056338
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10461.0,
+                "avgBuildingCoverage": 223924.62203023757,
+                "avgContentsCoverage": 107448.59611231102,
+                "avgPremium": 1804.85313174946
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.81166306695464,
+                    40.82375809935205
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10462.0,
+                "avgBuildingCoverage": 296184.55284552847,
+                "avgContentsCoverage": 111108.94308943089,
+                "avgPremium": 3080.7479674796746
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.84552845528455,
+                    40.80162601626016
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10463.0,
+                "avgBuildingCoverage": 235929.64824120604,
+                "avgContentsCoverage": 116954.77386934674,
+                "avgPremium": 592.9949748743719
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10464.0,
+                "avgBuildingCoverage": 295599.4149071483,
+                "avgContentsCoverage": 27697.863139150344,
+                "avgPremium": 2501.8809463240905
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.851971508522006
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10465.0,
+                "avgBuildingCoverage": 304106.7831215971,
+                "avgContentsCoverage": 28549.44041137326,
+                "avgPremium": 1840.0368269812461
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.80010586811856,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10466.0,
+                "avgBuildingCoverage": 193139.70588235295,
+                "avgContentsCoverage": 82345.58823529411,
+                "avgPremium": 998.3786764705883
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8216911764706,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10467.0,
+                "avgBuildingCoverage": 206744.18604651163,
+                "avgContentsCoverage": 63798.4496124031,
+                "avgPremium": 348.0232558139535
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10468.0,
+                "avgBuildingCoverage": 175000.0,
+                "avgContentsCoverage": 70000.0,
+                "avgPremium": 344.5
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10469.0,
+                "avgBuildingCoverage": 176728.50779510022,
+                "avgContentsCoverage": 94171.26948775056,
+                "avgPremium": 614.5055679287306
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.83051224944322,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10470.0,
+                "avgBuildingCoverage": 146048.38709677418,
+                "avgContentsCoverage": 90798.3870967742,
+                "avgPremium": 1126.2096774193549
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.85645161290323,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10471.0,
+                "avgBuildingCoverage": 216961.6724738676,
+                "avgContentsCoverage": 87317.0731707317,
+                "avgPremium": 397.9721254355401
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10472.0,
+                "avgBuildingCoverage": 340585.6382978723,
+                "avgContentsCoverage": 40303.1914893617,
+                "avgPremium": 1056.8696808510638
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10473.0,
+                "avgBuildingCoverage": 686845.8149779736,
+                "avgContentsCoverage": 31931.901615271658,
+                "avgPremium": 1613.1149045521292
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.88384728340675,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10474.0,
+                "avgBuildingCoverage": 348320.0,
+                "avgContentsCoverage": 162975.75757575757,
+                "avgPremium": 3993.9121212121213
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 10475.0,
+                "avgBuildingCoverage": 278083.4179357022,
+                "avgContentsCoverage": 54627.241962774955,
+                "avgPremium": 1951.6243654822335
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.9
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11004.0,
+                "avgBuildingCoverage": 200564.51612903227,
+                "avgContentsCoverage": 92322.58064516129,
+                "avgPremium": 371.26612903225805
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7,
+                    40.71774193548387
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11101.0,
+                "avgBuildingCoverage": 1522856.2733582489,
+                "avgContentsCoverage": 90327.17565403097,
+                "avgPremium": 4848.938601174586
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.96636412172984,
+                    40.704911906033104
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11102.0,
+                "avgBuildingCoverage": 2221411.4391143913,
+                "avgContentsCoverage": 32382.841328413284,
+                "avgPremium": 4338.566420664207
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11103.0,
+                "avgBuildingCoverage": 231445.6953642384,
+                "avgContentsCoverage": 77490.06622516556,
+                "avgPremium": 568.1059602649007
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11104.0,
+                "avgBuildingCoverage": 199910.61452513965,
+                "avgContentsCoverage": 96726.25698324022,
+                "avgPremium": 429.6256983240223
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11105.0,
+                "avgBuildingCoverage": 277866.18819776713,
+                "avgContentsCoverage": 93111.64274322169,
+                "avgPremium": 1337.799043062201
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11106.0,
+                "avgBuildingCoverage": 372384.03041825094,
+                "avgContentsCoverage": 82445.24714828897,
+                "avgPremium": 2471.0114068441067
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11109.0,
+                "avgBuildingCoverage": 329045.56962025317,
+                "avgContentsCoverage": 74179.74683544303,
+                "avgPremium": 957.8481012658228
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11201.0,
+                "avgBuildingCoverage": 1037624.8920863309,
+                "avgContentsCoverage": 118463.23741007195,
+                "avgPremium": 3717.5402877697843
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99791366906476,
+                    40.69741007194245
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11203.0,
+                "avgBuildingCoverage": 217986.28048780488,
+                "avgContentsCoverage": 83100.60975609756,
+                "avgPremium": 561.8185975609756
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90243902439025,
+                    40.639481707317074
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11204.0,
+                "avgBuildingCoverage": 203855.6701030928,
+                "avgContentsCoverage": 86270.10309278351,
+                "avgPremium": 670.6185567010309
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.60164948453608
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11205.0,
+                "avgBuildingCoverage": 279238.17292006523,
+                "avgContentsCoverage": 168397.3898858075,
+                "avgPremium": 2309.714518760196
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99918433931485,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11206.0,
+                "avgBuildingCoverage": 203282.60869565216,
+                "avgContentsCoverage": 81515.21739130435,
+                "avgPremium": 708.4057971014493
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.91014492753624,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11207.0,
+                "avgBuildingCoverage": 226352.58358662613,
+                "avgContentsCoverage": 83252.27963525835,
+                "avgPremium": 517.4924012158054
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11208.0,
+                "avgBuildingCoverage": 221744.47949526814,
+                "avgContentsCoverage": 106863.72239747635,
+                "avgPremium": 602.211356466877
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.84700315457414,
+                    40.704416403785494
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11209.0,
+                "avgBuildingCoverage": 215240.45138888888,
+                "avgContentsCoverage": 88549.47916666667,
+                "avgPremium": 406.68402777777777
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11210.0,
+                "avgBuildingCoverage": 233574.05614714423,
+                "avgContentsCoverage": 88699.9031945789,
+                "avgPremium": 409.5188770571152
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9324298160697,
+                    40.60048402710552
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11211.0,
+                "avgBuildingCoverage": 1006563.5061391542,
+                "avgContentsCoverage": 60699.3860845839,
+                "avgPremium": 3170.9795361527968
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.96950886766713,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11212.0,
+                "avgBuildingCoverage": 197211.9205298013,
+                "avgContentsCoverage": 73668.87417218543,
+                "avgPremium": 363.19867549668874
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11213.0,
+                "avgBuildingCoverage": 171651.376146789,
+                "avgContentsCoverage": 71706.42201834862,
+                "avgPremium": 358.1284403669725
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11214.0,
+                "avgBuildingCoverage": 250241.7268786127,
+                "avgContentsCoverage": 91598.01300578035,
+                "avgPremium": 853.1687138728323
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.600433526011564
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11215.0,
+                "avgBuildingCoverage": 257498.7012987013,
+                "avgContentsCoverage": 94003.71900826447,
+                "avgPremium": 1423.5537190082644
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.699940968122796
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11216.0,
+                "avgBuildingCoverage": 176294.8207171315,
+                "avgContentsCoverage": 81505.97609561753,
+                "avgPremium": 381.7410358565737
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.96055776892432,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11217.0,
+                "avgBuildingCoverage": 261137.01492537314,
+                "avgContentsCoverage": 84977.71144278607,
+                "avgPremium": 1206.8298507462687
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11218.0,
+                "avgBuildingCoverage": 196260.83150984682,
+                "avgContentsCoverage": 72983.36980306346,
+                "avgPremium": 389.37199124726476
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.6164113785558
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11219.0,
+                "avgBuildingCoverage": 179870.37037037036,
+                "avgContentsCoverage": 77570.98765432098,
+                "avgPremium": 397.4783950617284
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11220.0,
+                "avgBuildingCoverage": 253050.0,
+                "avgContentsCoverage": 115738.08139534884,
+                "avgPremium": 1275.9389534883721
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99854651162791,
+                    40.61046511627907
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11221.0,
+                "avgBuildingCoverage": 222450.184501845,
+                "avgContentsCoverage": 89885.60885608855,
+                "avgPremium": 417.2878228782288
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11222.0,
+                "avgBuildingCoverage": 390110.62176165805,
+                "avgContentsCoverage": 88028.34937083641,
+                "avgPremium": 2265.9563286454477
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.97901554404146,
+                    40.699888971132495
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11223.0,
+                "avgBuildingCoverage": 271931.80076628353,
+                "avgContentsCoverage": 83819.44444444444,
+                "avgPremium": 579.147509578544
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.60023946360153
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11224.0,
+                "avgBuildingCoverage": 364769.76537597325,
+                "avgContentsCoverage": 44322.82489418404,
+                "avgPremium": 1872.7188169514552
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99994774520562,
+                    40.60009928410932
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11225.0,
+                "avgBuildingCoverage": 193279.24528301886,
+                "avgContentsCoverage": 69373.58490566038,
+                "avgPremium": 365.46792452830186
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99622641509434,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11226.0,
+                "avgBuildingCoverage": 245040.14598540147,
+                "avgContentsCoverage": 75419.70802919708,
+                "avgPremium": 462.3540145985401
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.98576642335766,
+                    40.61788321167884
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11228.0,
+                "avgBuildingCoverage": 218203.58306188925,
+                "avgContentsCoverage": 91037.45928338762,
+                "avgPremium": 403.05374592833874
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11229.0,
+                "avgBuildingCoverage": 231978.0256127555,
+                "avgContentsCoverage": 67092.163514545,
+                "avgPremium": 912.3194809600543
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90672546857773,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11230.0,
+                "avgBuildingCoverage": 224610.47835990888,
+                "avgContentsCoverage": 89267.65375854215,
+                "avgPremium": 398.95785876993165
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11231.0,
+                "avgBuildingCoverage": 315674.26090169995,
+                "avgContentsCoverage": 71587.86031042128,
+                "avgPremium": 2591.9937176644494
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99968588322247,
+                    40.69985218033999
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11232.0,
+                "avgBuildingCoverage": 322896.2805526036,
+                "avgContentsCoverage": 96648.9904357067,
+                "avgPremium": 2993.758767268863
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9931987247609,
+                    40.69160467587673
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11233.0,
+                "avgBuildingCoverage": 225219.51219512196,
+                "avgContentsCoverage": 84865.85365853658,
+                "avgPremium": 444.7357723577236
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90121951219513,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11234.0,
+                "avgBuildingCoverage": 238115.06067094931,
+                "avgContentsCoverage": 89718.37259100642,
+                "avgPremium": 547.2025695931477
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9000642398287,
+                    40.6000642398287
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11235.0,
+                "avgBuildingCoverage": 429393.7416370379,
+                "avgContentsCoverage": 61360.17127346408,
+                "avgPremium": 1714.9482356539359
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.95626792063311,
+                    40.60008028443629
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11236.0,
+                "avgBuildingCoverage": 243808.0352072686,
+                "avgContentsCoverage": 82546.8767745599,
+                "avgPremium": 496.51334469051676
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90032178686353,
+                    40.60081393147833
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11237.0,
+                "avgBuildingCoverage": 305272.3214285714,
+                "avgContentsCoverage": 66988.39285714286,
+                "avgPremium": 2448.0803571428573
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.90357142857144,
+                    40.69642857142857
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11238.0,
+                "avgBuildingCoverage": 228179.01234567902,
+                "avgContentsCoverage": 82225.30864197531,
+                "avgPremium": 616.2314814814815
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -74.0,
+                    40.696604938271605
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11239.0,
+                "avgBuildingCoverage": 210225.98870056498,
+                "avgContentsCoverage": 82610.16949152542,
+                "avgPremium": 624.5197740112994
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.69378531073446
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11249.0,
+                "avgBuildingCoverage": 5456308.229813664,
+                "avgContentsCoverage": 109723.13664596273,
+                "avgPremium": 7021.541925465838
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.99937888198758,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11354.0,
+                "avgBuildingCoverage": 413596.78925861063,
+                "avgContentsCoverage": 49812.8429655575,
+                "avgPremium": 2606.594862813777
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11355.0,
+                "avgBuildingCoverage": 236148.82506527414,
+                "avgContentsCoverage": 90028.72062663185,
+                "avgPremium": 843.2114882506528
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.75221932114883
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11356.0,
+                "avgBuildingCoverage": 425013.0627774255,
+                "avgContentsCoverage": 53317.75523145212,
+                "avgPremium": 2608.9968294229548
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.83297400126824,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11357.0,
+                "avgBuildingCoverage": 351342.3710208562,
+                "avgContentsCoverage": 69951.31723380901,
+                "avgPremium": 1994.8161361141604
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.80493962678376,
+                    40.80757409440175
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11358.0,
+                "avgBuildingCoverage": 196900.0,
+                "avgContentsCoverage": 78681.88976377953,
+                "avgPremium": 409.1653543307087
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11360.0,
+                "avgBuildingCoverage": 220284.6511627907,
+                "avgContentsCoverage": 81773.17829457365,
+                "avgPremium": 532.7751937984497
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11361.0,
+                "avgBuildingCoverage": 194669.75308641975,
+                "avgContentsCoverage": 72177.46913580247,
+                "avgPremium": 439.54938271604937
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11362.0,
+                "avgBuildingCoverage": 233331.18971061092,
+                "avgContentsCoverage": 87330.86816720257,
+                "avgPremium": 1167.887459807074
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7,
+                    40.798070739549836
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11363.0,
+                "avgBuildingCoverage": 235887.25701943843,
+                "avgContentsCoverage": 48943.08855291577,
+                "avgPremium": 1333.8974082073435
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7481101511879,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11364.0,
+                "avgBuildingCoverage": 204693.42327150085,
+                "avgContentsCoverage": 78330.35413153456,
+                "avgPremium": 410.7150084317032
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.78954468802698,
+                    40.73558178752108
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11365.0,
+                "avgBuildingCoverage": 164297.95918367346,
+                "avgContentsCoverage": 66981.80272108843,
+                "avgPremium": 367.8333333333333
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.70136054421769
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11366.0,
+                "avgBuildingCoverage": 188420.9486166008,
+                "avgContentsCoverage": 75357.70750988142,
+                "avgPremium": 386.09288537549406
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11367.0,
+                "avgBuildingCoverage": 224542.1686746988,
+                "avgContentsCoverage": 98189.75903614458,
+                "avgPremium": 491.89156626506025
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11368.0,
+                "avgBuildingCoverage": 347496.3541666667,
+                "avgContentsCoverage": 191085.9375,
+                "avgPremium": 4474.401041666667
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8484375,
+                    40.75833333333333
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11369.0,
+                "avgBuildingCoverage": 213520.18348623853,
+                "avgContentsCoverage": 85220.18348623853,
+                "avgPremium": 406.1284403669725
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11370.0,
+                "avgBuildingCoverage": 215759.49367088606,
+                "avgContentsCoverage": 91341.77215189874,
+                "avgPremium": 439.2025316455696
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11371.0,
+                "avgBuildingCoverage": 0.0,
+                "avgContentsCoverage": 477833.3333333333,
+                "avgPremium": 772.3333333333334
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11372.0,
+                "avgBuildingCoverage": 282346.9387755102,
+                "avgContentsCoverage": 72816.32653061225,
+                "avgPremium": 590.530612244898
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.77448979591836
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11373.0,
+                "avgBuildingCoverage": 134250.0,
+                "avgContentsCoverage": 102879.62962962964,
+                "avgPremium": 667.4351851851852
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11374.0,
+                "avgBuildingCoverage": 261125.6544502618,
+                "avgContentsCoverage": 102929.31937172775,
+                "avgPremium": 1137.109947643979
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.89424083769634,
+                    40.705759162303664
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11375.0,
+                "avgBuildingCoverage": 231515.61822125813,
+                "avgContentsCoverage": 87825.27114967462,
+                "avgPremium": 578.112798264642
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.84219088937093,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11377.0,
+                "avgBuildingCoverage": 228012.29508196723,
+                "avgContentsCoverage": 102360.65573770492,
+                "avgPremium": 531.5122950819672
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.71106557377049
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11378.0,
+                "avgBuildingCoverage": 232379.792746114,
+                "avgContentsCoverage": 101633.67875647669,
+                "avgPremium": 907.9559585492228
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11379.0,
+                "avgBuildingCoverage": 202412.56830601091,
+                "avgContentsCoverage": 86040.98360655738,
+                "avgPremium": 449.2021857923497
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11385.0,
+                "avgBuildingCoverage": 241889.76377952757,
+                "avgContentsCoverage": 101255.90551181103,
+                "avgPremium": 875.988188976378
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11411.0,
+                "avgBuildingCoverage": 217652.91262135922,
+                "avgContentsCoverage": 87427.18446601942,
+                "avgPremium": 412.2864077669903
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11412.0,
+                "avgBuildingCoverage": 190003.75426621162,
+                "avgContentsCoverage": 79755.97269624574,
+                "avgPremium": 378.77474402730377
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.78327645051195,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11413.0,
+                "avgBuildingCoverage": 224608.7542087542,
+                "avgContentsCoverage": 84587.87878787878,
+                "avgPremium": 609.1537598204264
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7615039281706,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11414.0,
+                "avgBuildingCoverage": 239148.9636547034,
+                "avgContentsCoverage": 80684.54104708294,
+                "avgPremium": 793.111964338008
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.81142420199785,
+                    40.6946669703576
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11415.0,
+                "avgBuildingCoverage": 226388.88888888888,
+                "avgContentsCoverage": 66000.0,
+                "avgPremium": 378.85185185185185
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11416.0,
+                "avgBuildingCoverage": 214726.02739726027,
+                "avgContentsCoverage": 85890.4109589041,
+                "avgPremium": 370.13698630136986
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.86575342465753,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11417.0,
+                "avgBuildingCoverage": 384782.6254826255,
+                "avgContentsCoverage": 85572.20077220077,
+                "avgPremium": 657.2857142857143
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.81389961389961,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11418.0,
+                "avgBuildingCoverage": 238624.1610738255,
+                "avgContentsCoverage": 95449.6644295302,
+                "avgPremium": 388.0268456375839
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11419.0,
+                "avgBuildingCoverage": 202045.45454545456,
+                "avgContentsCoverage": 86636.36363636363,
+                "avgPremium": 362.1454545454545
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11420.0,
+                "avgBuildingCoverage": 217580.28169014084,
+                "avgContentsCoverage": 90377.4647887324,
+                "avgPremium": 413.6281690140845
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11421.0,
+                "avgBuildingCoverage": 172079.20792079208,
+                "avgContentsCoverage": 70811.88118811882,
+                "avgPremium": 335.84158415841586
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8930693069307,
+                    40.70000000000001
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11422.0,
+                "avgBuildingCoverage": 234739.75105932204,
+                "avgContentsCoverage": 45447.960805084746,
+                "avgPremium": 1496.8040254237287
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7,
+                    40.691101694915254
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11423.0,
+                "avgBuildingCoverage": 218590.9090909091,
+                "avgContentsCoverage": 87380.1652892562,
+                "avgPremium": 393.9669421487603
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11426.0,
+                "avgBuildingCoverage": 219392.85714285713,
+                "avgContentsCoverage": 87750.0,
+                "avgPremium": 380.85267857142856
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11427.0,
+                "avgBuildingCoverage": 202595.0920245399,
+                "avgContentsCoverage": 78187.11656441719,
+                "avgPremium": 391.9325153374233
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.71349693251533,
+                    40.693251533742334
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11428.0,
+                "avgBuildingCoverage": 196839.62264150943,
+                "avgContentsCoverage": 78735.84905660378,
+                "avgPremium": 354.1981132075472
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.73018867924529,
+                    40.70000000000001
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11429.0,
+                "avgBuildingCoverage": 201324.7863247863,
+                "avgContentsCoverage": 80427.35042735042,
+                "avgPremium": 370.5726495726496
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.7,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11430.0,
+                "avgBuildingCoverage": 500000.0,
+                "avgContentsCoverage": 8000.0,
+                "avgPremium": 475.22222222222223
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.9,
+                    40.8
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11432.0,
+                "avgBuildingCoverage": 189266.66666666666,
+                "avgContentsCoverage": 78081.81818181818,
+                "avgPremium": 371.9
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11433.0,
+                "avgBuildingCoverage": 211366.12021857922,
+                "avgContentsCoverage": 87519.1256830601,
+                "avgPremium": 494.1748633879781
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11434.0,
+                "avgBuildingCoverage": 213044.64882943145,
+                "avgContentsCoverage": 92885.61872909698,
+                "avgPremium": 516.1204013377926
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11435.0,
+                "avgBuildingCoverage": 279254.65838509315,
+                "avgContentsCoverage": 173509.31677018633,
+                "avgPremium": 3996.248447204969
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11436.0,
+                "avgBuildingCoverage": 227715.953307393,
+                "avgContentsCoverage": 106237.35408560312,
+                "avgPremium": 611.1984435797665
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.7
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11691.0,
+                "avgBuildingCoverage": 261411.30691399664,
+                "avgContentsCoverage": 38014.89881956155,
+                "avgPremium": 1407.3444772344014
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.77193929173693,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11692.0,
+                "avgBuildingCoverage": 246924.63464265893,
+                "avgContentsCoverage": 41488.986865634826,
+                "avgPremium": 1472.8321514460135
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.80005549731763,
+                    40.60011099463526
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11693.0,
+                "avgBuildingCoverage": 304975.63679444866,
+                "avgContentsCoverage": 43850.22425319455,
+                "avgPremium": 1375.2765507319962
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8,
+                    40.6
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11694.0,
+                "avgBuildingCoverage": 271455.40831060486,
+                "avgContentsCoverage": 81618.52077651212,
+                "avgPremium": 924.5453232793197
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.85361142307076,
+                    40.600057757099314
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "zip": 11697.0,
+                "avgBuildingCoverage": 223869.38274908572,
+                "avgContentsCoverage": 52049.7680849166,
+                "avgPremium": 1054.7603246811168
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -73.8999732405673,
+                    40.6000713584872
+                ]
+            }
+        }
+    ]
+}

@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     document.querySelector(".btn-secondary").addEventListener("click", () => {
-        window.location.href = "systems_diagram.html";
+        window.location.href = "systems_diagram1.html";
     });
 
     document.querySelector(".btn-about").addEventListener("click", () => {
