@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Click behavior for "Start the tool"
     introOption.addEventListener('click', () => {
-      window.location.href = 'tool.html';
+      window.location.href = 'index.html';
     });
   
     // Click behavior for "Visualize Data"

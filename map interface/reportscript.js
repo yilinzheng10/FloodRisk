@@ -105,7 +105,7 @@ loadFloodData();
   
 // --- Bottom Buttons Event Listeners ---
 document.querySelector(".home-button").addEventListener("click", function() {
-  window.location.href = "../tool.html"; // Change to your actual home page
+  window.location.href = "../index.html"; // Change to your actual home page
 });
 
 document.getElementById("downloadBtn").addEventListener("click", function() {
