@@ -1,12 +1,20 @@
+/* Ensure the p5.js canvas is positioned behind all content */
+#defaultCanvas0 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 body {
     margin: 0;
-    font-family: monospace;
+    font-family: "Helvetica Neue", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
-    color: white;
+    background-color: white; /* Changed from black */
+    color: black; /* Changed from white */
     font-weight: 400;
 }
 
@@ -37,7 +45,7 @@ body {
 #location-display {
     margin-top: 40px;
     font-size: 15px;
-    color: #FFFFFF;
+    color: #000000; /* Changed from white */
 }
 
 .attributes-section .heading {
@@ -60,7 +68,7 @@ body {
     padding: 12px 20px;
     font-size: 1rem;
     background-color: #FF5722;
-    color: white;
+    color: white; /* Changed from white */
     border: none;
     border-radius: 15px;
     padding: 15px 30px;
@@ -78,6 +86,8 @@ body {
     transform: scale(1.05);
 }
 
-.highlight_text {
-    color: #FF5722;
-  }
+.highlight {
+    background-color: #ffcc0082; /* Highlight background */
+    padding: 10px 10px;
+    font-weight: bold;
+}

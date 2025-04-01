@@ -4,16 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Property Attribution</title>
+ 
+  <!-- p5.js for background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script> 
+  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
   <link rel="stylesheet" href="attribution.css">
 
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://leaflet.github.io/Leaflet.heat/dist/leaflet-heat.js"></script> 
-
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <!-- Leaflet MarkerCluster Library -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
-  <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
 </head>
 <body>
   <div class="container">
@@ -25,21 +30,14 @@
         <div id="location-display">
             <!-- Address will be inserted here -->
         </div>
-        <h4 class="heading">Risk Features</h4>
+        <h4 class="heading">Features</h4>
         
         <div class="layers-menu">
-            <p>Historic Flood</p>
-            <label><input type="checkbox" id="layer1"> Flood Frequency： Repetitve Flood </label><br>
-            <label><input type="checkbox" id="layer2"> Flood Levels </label><br>
-            <label><input type="checkbox" id="layer3"> Levee/flood barrier: </label><br>
-
-            <p>Property Information</p>
-            <label><input type="checkbox" id="layer4"> Zoning</label><br>
-            <label><input type="checkbox" id="layer5"> Green cover</label><br>
-            <label><input type="checkbox" id="layer6"> Building Age</label><br>
-
-            <p>Flood Insurance</p>
-            <label><input type="checkbox" id="layer7"> Flood Premium Cost</label><br>
+            <label><input type="checkbox" id="layer2"> Flood Levels </label><br><br>
+            <label><input type="checkbox" id="layer4"> Zoning</label><br><br>
+            <label><input type="checkbox" id="layer5"> Green cover</label><br><br>
+            <label><input type="checkbox" id="layer6"> Building Age</label><br><br>
+            <label><input type="checkbox" id="layer7"> Flood Premium Cost</label><br><br>
         </div>  
 
         <br><hr><br>
@@ -52,9 +50,93 @@
         </div>
 
 
-      <button class="btn" onclick="redirectToAnswerPage()">Get My Personalized Risk Report</button>
+      <button class="btn" onclick="redirectToAnswerPage()">Back</button>
     </div>
   </div>
   <script src="attribution.js"></script>
+
+  <!-- p5.js Background Code -->
+  <script>
+    let lines = [];
+    let numRows, numCols;
+    let spacingX, spacingY;
+    let waveFactor = 0.05; // Controls wave strength
+    let decay = 0.98; // Dampens motion over time
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      adjustGrid();
+      initLines();
+    }
+
+    function draw() {
+      background(255); // White background
+      stroke(200); // Light gray lines
+      strokeWeight(1);
+      for (let w of lines) {
+        w.update(mouseX, mouseY);
+        w.display();
+      }
+    }
+
+    function adjustGrid() {
+      numCols = floor(width / 30);
+      numRows = floor(height / 30);
+      spacingX = width / numCols;
+      spacingY = height / numRows;
+    }
+
+    function initLines() {
+      lines = [];
+      for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+          let x = j * spacingX;
+          let y = i * spacingY;
+          lines.push(new WaveLine(x, y, spacingX * 0.8));
+        }
+      }
+    }
+
+    class WaveLine {
+      constructor(x, y, length) {
+        this.originX = x;
+        this.originY = y;
+        this.x1 = x - length / 2;
+        this.y1 = y;
+        this.x2 = x + length / 2;
+        this.y2 = y;
+        this.length = length;
+        this.angleOffset = random(TWO_PI);
+        this.waveIntensity = 0;
+      }
+
+      update(mx, my) {
+        let d = dist(mx, my, this.originX, this.originY);
+        if (d < 150) {
+          this.waveIntensity = sin(frameCount * 0.1 + this.angleOffset) * d * waveFactor;
+        }
+        this.waveIntensity *= decay;
+        let angle = sin(frameCount * 0.05 + this.angleOffset) * this.waveIntensity;
+        let targetX1 = this.originX - this.length / 2 + cos(angle) * this.length * 0.3;
+        let targetY1 = this.originY + sin(angle) * 10;
+        let targetX2 = this.originX + this.length / 2 - cos(angle) * this.length * 0.3;
+        let targetY2 = this.originY - sin(angle) * 10;
+        this.x1 = lerp(this.x1, targetX1, 0.1);
+        this.y1 = lerp(this.y1, targetY1, 0.1);
+        this.x2 = lerp(this.x2, targetX2, 0.1);
+        this.y2 = lerp(this.y2, targetY2, 0.1);
+      }
+
+      display() {
+        line(this.x1, this.y1, this.x2, this.y2);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      adjustGrid();
+      initLines();
+    }
+  </script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+To collect user input data to Google sheet > set up server on terminal
+1. run cors-anywhere
+2. run node server.js 
+3. Keep the Terminal Open

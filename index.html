@@ -1,77 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risk Projection Tool</title>
-    <link rel="stylesheet" href="toolstyles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Where the Water Reached</title>
+    <!-- p5.js for background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <link rel="stylesheet" href="toolstyles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="title"><h2>PLACEHOLDER NAME</h2></div>
-            <!-- 
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Solutions</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><button class="btn-explore">Explore</button></li>
-            </ul>
-        -->
-        </nav>
-    </header>
-    
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Plan Smarter, Protect Better <br>
-                Understand Your Flood Risk and Future Costs</h2>
-            <br>
-            <p>Climate change has increased the frequency and intensity of extreme weather events。 Make informed decisions about your property with flood risk projections and cost analysis.</p>
+  <header>
+    <nav>
+      <div class="title"><h2>Where the Water Reached</h2></div>
+      <!-- 
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><button class="btn-explore">Explore</button></li>
+      </ul>
+      -->
+    </nav>
+  </header>
+  
+  <section class="hero animate-on-scroll">
+    <!-- Moved hero text above the slideshow -->
+    <div class="hero-text">
+      <h2>Not all risks are visible.<br> Not all stories are told.</h2>
+      <p>Climate change has increased the frequency and intensity of extreme weather events. Make informed decisions about your property with flood risk projections and cost analysis.</p>
+    </div>
+    <div class="slideshow">
+      <div class="slide" style="background-image: url('images/sandy1.webp');"></div>
+      <div class="slide" style="background-image: url('images/sandy2.jpg');"></div>
+      <div class="slide" style="background-image: url('images/sandy3.webp');"></div>
+      <div class="slide" style="background-image: url('images/sandy4.webp');"></div>
+    </div>
+  </section>
 
-            <div class="buttons">
-                <button class="btn-primary">Take Action</button>
-                <button class="btn-secondary">Methodology</button>
-                <button class="btn-about">About</button>
-            </div>
-        </div>
-        <div class="hero-image"></div>
-    </section>
-    
-    <section class="function">
-        <h2>In the last decade, flood damages have cost homeowners billions.</h2>
+  <section class="action animate-on-scroll">
+    <h2 class="left">Get clarity in minutes.</h2>
+    <div class="buttons">
+        <button class="btn-primary">Take Action</button>
+        <button class="btn-secondary">Methodology</button>
+        <button class="btn-about">About</button>
+    </div>
+    <p class="note">The projections are based on historical data and current climate models.</p>
+  </section>
+  
+  <section class="function animate-on-scroll">
+    <h2>In the last decade, flood damages have cost homeowners billions. </h2>
+    <h2><em><span class="highlight">You’re not alone.</span></em> Many homeowners face this question.</h2>
+    <br>
+    <h2 class="left">How it works:</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Interactive Map</h3>
+        <p>Explore flood zones and historical data for your area.</p>
+      </div>
+      <div class="card">
+        <h3>Cost Calculator</h3>
+        <p>Estimate potential flood damage costs and plan your budget.</p>
+      </div>
+      <div class="card">
+        <h3>Risk Analysis Report</h3>
+        <p>Receive a report detailing risk and recommendations.</p>
+      </div>
+      <div class="card">
+        <h3>Flood Prevention Guide</h3>
+        <p>Access guide to better prepare your home for flood events.</p>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="animate-on-scroll">
+    <div class="footer-content">
+      <div class="footer-logo">Where the Water Reached</div>
+      <div class="footer-links">
+        <p>© 2025 Yilin Zheng. All rights reserved.<br></p>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="toolscripts.js"></script>
 
-        <div class="grid">
-            <div class="card">
-              <h3>Interactive Flood Map</h3>
-              <p>Explore detailed flood zones and historical data for your area.</p>
-            </div>
-            <div class="card">
-              <h3>Cost Calculator</h3>
-              <p>Estimate potential flood damage costs and plan your budget.</p>
-            </div>
-            <div class="card">
-              <h3>Risk Analysis Report</h3>
-              <p>Receive a personalized report detailing risk factors and recommendations.</p>
-            </div>
-            <div class="card">
-              <h3>Emergency Planning Guide</h3>
-              <p>Access step-by-step instructions to prepare for emergencies.</p>
-            </div>
-          </div>
-    </section>
-    
-    
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">SOME RISK PROJECTION TOOL PLACEHOLDER NAME</div>
-            <div class="footer-links">
-                
-                <p>© 2025 Yilin Zheng. All rights reserved.<br>
-            </div>
-        </div>
-    </footer>
-    
-    <script src="toolscripts.js"></script>
+  <!-- p5.js Background Code -->
+  <script>
+    let lines = [];
+    let numRows, numCols;
+    let spacingX, spacingY;
+    let waveFactor = 0.05; // Controls wave strength
+    let decay = 0.98; // Dampens motion over time
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      adjustGrid();
+      initLines();
+    }
+
+    function draw() {
+      background(255); // White background
+      stroke(200); // Light gray lines
+      strokeWeight(1);
+      for (let w of lines) {
+        w.update(mouseX, mouseY);
+        w.display();
+      }
+    }
+
+    function adjustGrid() {
+      numCols = floor(width / 30);
+      numRows = floor(height / 30);
+      spacingX = width / numCols;
+      spacingY = height / numRows;
+    }
+
+    function initLines() {
+      lines = [];
+      for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+          let x = j * spacingX;
+          let y = i * spacingY;
+          lines.push(new WaveLine(x, y, spacingX * 0.8));
+        }
+      }
+    }
+
+    class WaveLine {
+      constructor(x, y, length) {
+        this.originX = x;
+        this.originY = y;
+        this.x1 = x - length / 2;
+        this.y1 = y;
+        this.x2 = x + length / 2;
+        this.y2 = y;
+        this.length = length;
+        this.angleOffset = random(TWO_PI);
+        this.waveIntensity = 0;
+      }
+
+      update(mx, my) {
+        let d = dist(mx, my, this.originX, this.originY);
+        if (d < 150) {
+          this.waveIntensity = sin(frameCount * 0.1 + this.angleOffset) * d * waveFactor;
+        }
+        this.waveIntensity *= decay;
+        let angle = sin(frameCount * 0.05 + this.angleOffset) * this.waveIntensity;
+        let targetX1 = this.originX - this.length / 2 + cos(angle) * this.length * 0.3;
+        let targetY1 = this.originY + sin(angle) * 10;
+        let targetX2 = this.originX + this.length / 2 - cos(angle) * this.length * 0.3;
+        let targetY2 = this.originY - sin(angle) * 10;
+        this.x1 = lerp(this.x1, targetX1, 0.1);
+        this.y1 = lerp(this.y1, targetY1, 0.1);
+        this.x2 = lerp(this.x2, targetX2, 0.1);
+        this.y2 = lerp(this.y2, targetY2, 0.1);
+      }
+
+      display() {
+        line(this.x1, this.y1, this.x2, this.y2);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      adjustGrid();
+      initLines();
+    }
+  </script>
 </body>
 </html>

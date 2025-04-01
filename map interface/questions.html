@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flood Risk Questionaire</title>
+  <title>Flood Risk Questionnaire</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  
   <link rel="stylesheet" href="questionstyles.css" />
 </head>
 <body>
@@ -20,11 +19,11 @@
         <div id="persistent-map-ui" style="display:none;">
           <div class="search-bar">
             <button id="locate">
-              <img src="pin 1.png" alt="Locate" width="20" height="20">
+              <img src="pin1.png" alt="Locate" width="20" height="20">
             </button>
             <input type="text" id="address" placeholder="Search your address" />
             <button id="search">
-              <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="Search" width="20" height="20">
+              <img src="search1.png" alt="Search" width="30" height="30">
             </button>
           </div>
           <div id="map"></div>
@@ -39,22 +38,19 @@
         <!-- Next button placed inside the question container (under map/options) -->
         <button type="button" id="next-button">Next</button>
       </div>
-      
-      <!-- Optionally, you can remove the separate next button outside the container -->
     </div>
   </div>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
-    /* Survey questions definition.
-       The first question (id "location") now uses type "map".
-    */
+    // Survey questions definition.
+    // Ensure the "user" question is the first element.
     const questions = [
+      { id: "user", text: "Are you first time homebuyer?", type: "radio", options: ["Yes", "No"] },
       { id: "location", text: "Where do you currently live?", type: "map" },
       { id: "building-type", text: "What type of building do you live in?", type: "select", options: ["Single-family home", "Apartment", "Townhouse", "Other"] },
-      { id: "flood-risk", text: "On a scale from 1-5, how would you rate the flood risk of your location?", type: "radio", options: ["1", "2", "3", "4", "5"] },
-      { id: "researched", text: "Before moving in, did you research the flood risk of your area?", type: "radio", options: ["Yes", "No"] },
-      { id: "sources", text: "If yes, what sources did you use to check flood risk?", type: "textarea" }
+      { id: "flood-risk", text: "How would you rate the flood risk of your location?", type: "radio", options: ["1", "2", "3", "4", "5"] },
+      { id: "researched", text: "Did you research the flood risk of your area?", type: "radio", options: ["Yes", "No"] }
     ];
     
     let currentQuestionIndex = 0;
@@ -62,15 +58,16 @@
     const answerInput = document.getElementById("answer");
     const optionsContainer = document.getElementById("options-container");
     const nextButton = document.getElementById("next-button");
-    // This object will accumulate responses from all questions.
+    // Object to accumulate responses.
     let responses = {};
-    let map; // Global Leaflet map variable
-    let selectedMarker = null; // Global variable for the currently displayed marker
+    let map; // Global Leaflet map variable.
+    let selectedMarker = null; // Currently displayed marker.
     const persistentMapUI = document.getElementById("persistent-map-ui");
     
     // Load a question based on the current index.
     function loadQuestion() {
       const question = questions[currentQuestionIndex];
+      console.log("Loading question:", question.id);
       questionLabel.textContent = question.text;
       
       // Clear dynamic options and reset input.
@@ -80,12 +77,10 @@
       
       if (question.type === "map") {
         persistentMapUI.style.display = "block";
-        // Initialize map if not already done.
         if (!map) {
           initializeMap();
         }
       } else {
-        // Hide persistent map UI for non-map questions.
         persistentMapUI.style.display = "none";
         if (question.type === "text" || question.type === "textarea") {
           answerInput.style.display = "block";
@@ -99,10 +94,12 @@
             btn.textContent = option;
             btn.setAttribute("data-value", option);
             btn.addEventListener("click", function() {
-              document.querySelectorAll(".option-button").forEach(button => {
+              // Remove 'selected' class from all option buttons within optionsContainer.
+              optionsContainer.querySelectorAll(".option-button").forEach(button => {
                 button.classList.remove("selected");
               });
               this.classList.add("selected");
+              console.log(`Question ${question.id} selected:`, this.getAttribute("data-value"));
             });
             optionsContainer.appendChild(btn);
           });
@@ -110,7 +107,6 @@
       }
     }
     
-    // Initialize the Leaflet map and attach search and click events.
     function initializeMap() {
       const mapboxToken = "pk.eyJ1IjoicXVpeWlsIiwiYSI6ImNsemoxNHlhMTBsa2UyaXByd3pvcjM4ZjgifQ.JTxA-uHyVmgrVrRoNJiAyA"; 
       const nycBounds = [[40.4774, -74.2591], [40.9176, -73.7004]];
@@ -118,7 +114,7 @@
         maxBounds: nycBounds,
         maxZoom: 18,
         minZoom: 11
-      }).setView([40.7128, -74.0060], 12);
+      }).setView([40.7338, -73.9860], 12);
       
       L.tileLayer('https://api.mapbox.com/styles/v1/quiyil/cm2m8fdnz001x01qj75tm3xod/tiles/{z}/{x}/{y}?access_token=' + mapboxToken, {
         attribution: 'Map data © OpenStreetMap contributors, Imagery © Mapbox',
@@ -126,7 +122,6 @@
         zoomOffset: -1
       }).addTo(map);
       
-      // Search button event.
       document.getElementById('search').addEventListener('click', () => {
         const address = document.getElementById('address').value.trim();
         if (!address) {
@@ -136,7 +131,6 @@
         searchAddress(address, mapboxToken);
       });
       
-      // Map click event.
       map.on('click', async (e) => {
         const { lat, lng } = e.latlng;
         try {
@@ -145,24 +139,21 @@
           );
           const data = await response.json();
           const placeName = data.features[0]?.place_name || 'Unknown Location';
-          const popupContent = `
-            <div>
-              <p><strong>Address:</strong> ${placeName}</p>
-              <p><strong>Coordinates:</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}</p>
-              <button onclick="window.selectLocation(${lat}, ${lng}, '${placeName.replace(/'/g, "\\'")}')">Select this location</button>
-            </div>
-          `;
+          
           if (selectedMarker) {
             map.removeLayer(selectedMarker);
           }
-          selectedMarker = L.marker([lat, lng]).addTo(map).bindPopup(popupContent).openPopup();
+          selectedMarker = L.marker([lat, lng]).addTo(map);
+          document.getElementById('address').value = placeName;
+          responses["location"] = placeName;
+          responses["coordinates"] = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+          console.log("Map click recorded:", responses["location"], responses["coordinates"]);
         } catch (error) {
-          console.error('Error fetching reverse geocode:', error);
+          console.error("Error fetching reverse geocode:", error);
         }
       });
     }
     
-    // Geocode address from search bar.
     async function searchAddress(address, token) {
       try {
         const response = await fetch(
@@ -175,43 +166,35 @@
         }
         const [lng, lat] = data.features[0].geometry.coordinates;
         const placeName = data.features[0].place_name;
-        const popupContent = `
-          <div>
-            <p><strong>Address:</strong> ${placeName}</p>
-            <p><strong>Coordinates:</strong> ${lat.toFixed(6)}, ${lng.toFixed(6)}</p>
-            <button onclick="window.selectLocation(${lat}, ${lng}, '${placeName.replace(/'/g, "\\'")}')">Select this location</button>
-          </div>
-        `;
         if (selectedMarker) {
           map.removeLayer(selectedMarker);
         }
-        selectedMarker = L.marker([lat, lng]).addTo(map).bindPopup(popupContent).openPopup();
+        selectedMarker = L.marker([lat, lng]).addTo(map);
+        document.getElementById('address').value = placeName;
         map.setView([lat, lng], 14);
+        responses["location"] = placeName;
+        responses["coordinates"] = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+        console.log("Search address recorded:", responses["location"], responses["coordinates"]);
       } catch (error) {
         console.error('Error with geocoding request:', error);
         alert('Failed to search for address.');
       }
     }
     
-    // Global function: when a location is selected, update the search input and save the data.
     window.selectLocation = function(lat, lng, address) {
       if (selectedMarker) {
         map.removeLayer(selectedMarker);
       }
       selectedMarker = L.marker([lat, lng]).addTo(map);
-      
       const addressInput = document.getElementById('address');
       if (addressInput) {
         addressInput.value = address;
       }
-      
       responses["location"] = address;
       responses["coordinates"] = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
-      
       alert("Location selected: " + address);
     }
     
-    // Next button handler.
     nextButton.addEventListener("click", () => {
       const question = questions[currentQuestionIndex];
       let selectedValue;
@@ -221,12 +204,11 @@
           alert("Please select a location on the map or search for an address.");
           return;
         }
-        responses[question.id] = responses["location"];
         selectedValue = responses["location"];
       } else if (question.type === "text" || question.type === "textarea") {
         selectedValue = answerInput.value;
       } else if (question.type === "select" || question.type === "radio") {
-        const selectedButton = document.querySelector(".option-button.selected");
+        const selectedButton = optionsContainer.querySelector(".option-button.selected");
         if (selectedButton) {
           selectedValue = selectedButton.getAttribute("data-value");
         }
@@ -237,22 +219,26 @@
         return;
       }
       
-      if (question.type !== "map") {
-        responses[question.id] = selectedValue;
-      }
+      responses[question.id] = selectedValue;
+      console.log(`Response recorded for question ${question.id}:`, selectedValue);
+      console.log("Accumulated responses:", responses);
       
       currentQuestionIndex++;
-      
       if (currentQuestionIndex < questions.length) {
         loadQuestion();
       } else {
-        fetch("https://script.google.com/macros/s/AKfycbxMTODPI1ainq6wC98Qxsa-pn23npUe3BLICS4ZZsHGyugDUPTYahItfLITHhOQGKg2_Q/exec", {
+        // Use a CORS proxy (e.g., cors-anywhere) to send the POST request.
+        const proxyUrl = "http://localhost:8080/";
+        const targetUrl = "https://script.google.com/macros/s/AKfycbwhTHTkZyDpBtv5Tss9KBSEldLUY9mDsHLZOmX5CWDbufchowmj4F5xDufOBqwMioNStQ/exec";
+
+
+        fetch(proxyUrl + targetUrl, { 
           method: "POST",
-          mode: "no-cors",
           body: JSON.stringify(responses),
           headers: { "Content-Type": "application/json" }
         })
-        .then(() => {
+        .then(response => {
+          console.log("Opaque response", response);
           let coords = responses["coordinates"] || "";
           let latParam = "";
           let lngParam = "";
@@ -262,9 +248,9 @@
             lngParam = parts[1].trim();
           }
           const addrParam = responses["location"] || "Unknown Address";
-          window.location.href = "attribution.html?lat=" + encodeURIComponent(latParam) +
-                                   "&lng=" + encodeURIComponent(lngParam) +
-                                   "&address=" + encodeURIComponent(addrParam);
+          window.location.href = "report.html?lat=" + encodeURIComponent(latParam) +
+                                  "&lng=" + encodeURIComponent(lngParam) +
+                                  "&address=" + encodeURIComponent(addrParam);
         })
         .catch((error) => {
           console.error("Error:", error);
@@ -273,7 +259,6 @@
       }
     });
     
-    // Load the first question when the page loads.
     loadQuestion();
   </script>
 </body>

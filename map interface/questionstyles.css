@@ -3,45 +3,33 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
-  font-family: monospace;
-  background-color: #000; /* Black background */
-  color: #eee; /* Light text for contrast */
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
 }
-/* Main container: two columns */
+
+/* Main container */
 .container {
   display: flex;
   height: 100vh;
 }
-/* Left section styling */
-.left-section {
-  flex: 1;
-  /* Dark gradient for black background */
-  background: linear-gradient(to bottom, #222 0%, #000 70%);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 20px;
-}
-.illustration {
-  max-width: 80%;
-  height: auto;
-}
-/* Right section styling */
+
+/* Right section styling - update background to white */
 .right-section {
   flex: 1;
-  background-color: #000;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
 }
-/* Form styling */
-#survey-form {
+
+#question-container {
   width: 100%;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
+  max-width: 600px; /* Adjust to your preferred width */
+  margin: 0 auto;
 }
 
 /* Question label */
@@ -50,7 +38,7 @@ body {
   font-weight: 800;
   margin-bottom: 60px;
   display: block;
-  color: #eee;
+  color: #000000;
 }
 
 /* Text input styling */
@@ -59,72 +47,78 @@ body {
   padding: 10px;
   font-size: 1rem;
   margin-bottom: 20px;
-  background-color: #222;
-  color: #eee;
+  background-color: #ffffff; /* white background */
+  color: #000000;            /* black text */
   border: 2px solid #444;
   border-radius: 6px;
 }
+
 /* Options container styling */
 #options-container {
   margin-bottom: 20px;
 }
-/* Option button styling */
+
+/* Option button styling: Black background with white text */
 .option-button {
   display: inline-block;
   margin: 5px 10px 5px 0;
   padding: 10px 15px;
   font-size: 1rem;
-  background-color: #000;
-  border: 2px solid #444;
+  background-color: #000000; /* black background */
+  border: 2px solid #000000; /* black border */
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease, border-color 0.3s ease;
-  color: #eee;
+  color: #ffffff;            /* white text */
 }
+
 .option-button:hover {
-  background-color: #E64A19; /* Darker orange on hover */
+  background-color: #E64A19; /* hover effect remains as is */
   border-color: #E64A19;
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  transform: scale(1.05);
 }
+
 .option-button.selected {
-  background-color:#E64A19;
-  color: white;
+  background-color: #E64A19;
+  border-color: #E64A19;
+  color: #ffffff;
 }
-/* Next button styling */
+
+/* Next button styling (unchanged) */
 #next-button {
-  padding: 12px 20px;
-  font-size: 1rem;
-  background-color: #FF5722; /* Button color (bright orange) */
-  color: white; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 15px; /* Rounded corners */
-  padding: 15px 30px; /* Padding for the button */
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #FF5722;
+  color: white;
+  border: none;
+  border-radius: 15px;
   font-family: monospace;
-  font-size: 16px; /* Font size */
   letter-spacing: 0.75px;
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: all 0.3s ease; /* Smooth hover transition */
-  align-items: center;
-  margin-top: 60px;
-  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.3s ease;
   width: 100%;
-  display: block; /* ensures the button behaves as a block-level element */
+  display: block;
+  margin-top: 60px;
 }
+
 #next-button:hover {
-  background-color: #E64A19; /* Darker orange on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
+  background-color: #E64A19;
+  transform: scale(1.05);
 }
+
 /* Map and search bar styling */
 #map {
-  height: 300px;
+  height: 400px;
   margin-right: 10px;
   border-radius: 20px;
 }
+
 .search-bar {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .search-bar input {
   flex: 1;
   padding: 5px;
@@ -133,16 +127,13 @@ body {
   margin: 10px;
   border-radius: 8px;
   border: 2px solid #444;
-  background-color: #222;
-  color: #eee;
+  background-color: #ffffff; /* white background */
+  color: #000000;            /* black text */
 }
+
 .search-bar button {
   background: none;
   border: none;
   cursor: pointer;
   margin-left: 5px;
-}
-
-.search-bar img {
-  filter: brightness(0) invert(1);
 }

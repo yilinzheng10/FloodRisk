@@ -4,24 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Property Report</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- p5.js for background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+  <!-- html2pdf library for PDF download -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("HC5kVN4bjrVcaJx1V");
+    })();
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
   <link rel="stylesheet" href="reportstyles.css">
 </head>
 <body>
   
   <!-- PAGE HEADING -->
-  <div class="page-heading">
-    <div id="location-display">
-      <!-- Address will be inserted here -->
+
+  <div class="first">
+    <h4 style="color: #374151">In New York City, sellers are not legally required to share inspection reports. That means flood history, structural damage, and risk exposure may never be mentioned — unless you ask, or investigate.</h2>
+    <br>
+    <h1>As a homeowner, here's how your home value may shift...</h1>    
+
+    <div class="page-heading animate-on-scroll">
+      <div id="location-display">
+        <!-- Address will be inserted here -->
+      </div>
     </div>
-    <p>How much is my home worth?</p>
   </div>
   
-  <!-- TOP SECTION (Two Cards) -->
-  <div class="top-section">
-    <!-- Left Card: Flood Risk Meter -->
-    <div class="card">
-      <h2>Property Risk</h2>
+ 
+  
+  <h1>In the next 10 years, your property is... </h1> <br>
+
+  <div class="section">
+    <div class="card1 animate-on-scroll">
+      <h3><em class="highlight">rarely</em> at risk.</h3>
+      <br>
       <!-- Flood Risk Meter Placeholder SVG -->
       <div class="flood-risk-meter">
         <svg width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
@@ -46,93 +71,134 @@
         </svg>
       </div>
       <h3>0.1% chance flood occurrence</h3>
-      <p class="difference">Your property is <em>rarely</em> at risk.</p>
-      <p>Based on historical flood data and current flood risk factors.</p>
+
+      <p>Based on historical flood data and flood risk model.</p>
       <div class="insight-box">
         <strong>Insight</strong>: Your property is in a low-risk area and may have a higher value.
       </div>
     </div>
     
-    <!-- Right Card: Predicted & Actual Prices -->
-    <div class="card">
-      <h2>Predicted Market Price (5 years)</h2>
-      <div class="highlight">$562,270</div>
-      <p class="difference-pos">$30,982 <span>(+3.7%)</span></p>
+    <div class="card2 animate-on-scroll">
+      <h2>Predicted Market Price</h2>
+      <div class="highlight">$642,270</div>
+      <p class="difference-pos">$20,982 <span>(+2.8%)</span></p>
       <br><br>
-      <h2>Actual Property Cost (5 years)</h2> 
-      <div class="highlight">$541,175.00</div>
-      <p class="difference">-$21,095 <span>(-2.5%)</span></p>
+      <h2>Actual Property Cost</h2> 
+      <div class="highlight">$611,175</div>
+      <p class="difference">-$31,095 <span>(-3.1%)</span></p>
       <ul>
-        <li>Property Insurance: $9,000.00</li>
-        <li>Flood Insurance: $781.00</li>
-        <li>Possible Flood Damage Cost: $11,000.00</li>
+        <li>Property Insurance: $9,710.00</li>
+        <li>Flood Insurance: $881.00</li>
+        <li>Possible Flood Damage Cost: $21,000.00 for 2 feet of flood.</li>
       </ul>
       <div class="insight-box">
         Based on all homes sold in the last 5 years.
       </div>
     </div>
-  </div><!-- END TOP SECTION -->
-  
-  <!-- BOTTOM SECTION (Two Cards: Left Table & Right Map) -->
-  <div class="bottom-section">
-    <!-- Left Table: Median Sold Price By Borough -->
-    <div class="table-card">
-      <h3>Median Sold Price By Borough</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>City</th>
-            <th>Jan 2024</th>
-            <th>Jan 2025</th>
-            <th>Change YoY</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Queens</td>
-            <td>$610,000</td>
-            <td>$620,000</td>
-            <td class="change-pos">+1.6%</td>
-          </tr>
-          <tr>
-            <td>Bronx</td>
-            <td>$450,000</td>
-            <td>$445,000</td>
-            <td class="change-neg">-1.1%</td>
-          </tr>
-          <tr>
-            <td>Brooklyn</td>
-            <td>$700,000</td>
-            <td>$720,000</td>
-            <td class="change-pos">+2.9%</td>
-          </tr>
-          <tr>
-            <td>Manhattan</td>
-            <td>$1.15M</td>
-            <td>$1.12M</td>
-            <td class="change-neg">-2.6%</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="card3 animate-on-scroll">
+      <h3>Risk Perception</h3><br>
+      <p>How do homeowners perceive flood risk in your area?</p><br>
+      <!-- The floodmap will be placed inside this card -->
+      <div id="floodMap"></div>
     </div>
 
-    <!-- Right Table Card: My Risk Perception Map -->
-    <div class="table-card">
-      <h3>Risk Perception Map</h3>
-      <!-- The map will be placed inside this card -->
-      <div id="map" style="width:100%; height:300px;"></div>
-    </div>
-  </div><!-- END BOTTOM SECTION -->
-  
-  <!-- FOOTER BUTTONS -->
-  <div class="footer-buttons">
-    <button class="home-button">Home</button>
-    <button id="downloadBtn">Download</button>
-    <button id="emailBtn">Email to me</button>
   </div>
   
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <!-- Load our custom script after the DOM is ready -->
+  <!-- FOOTER BUTTONS -->
+  <div class="footer-buttons animate-on-scroll">
+    <button class="attribution">Explore More Information</button>
+    <button class="button" id="home-button">Home</button>
+    <button class="button" id="downloadBtn">Download</button>
+    <button class="button" id="emailBtn">Email to me</button>
+  </div>
+
   <script src="reportscript.js"></script>
+  
+  <!-- p5.js Background Code -->
+  <script>
+    let lines = [];
+    let numRows, numCols;
+    let spacingX, spacingY;
+    let waveFactor = 0.05; // Controls wave strength
+    let decay = 0.98; // Dampens motion over time
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      adjustGrid();
+      initLines();
+    }
+
+    function draw() {
+      background(255); // White background
+      stroke(200); // Light gray lines
+      strokeWeight(1);
+      for (let w of lines) {
+        w.update(mouseX, mouseY);
+        w.display();
+      }
+    }
+
+    function adjustGrid() {
+      numCols = floor(width / 30);
+      numRows = floor(height / 30);
+      spacingX = width / numCols;
+      spacingY = height / numRows;
+    }
+
+    function initLines() {
+      lines = [];
+      for (let i = 0; i < numRows; i++) {
+        for (let j = 0; j < numCols; j++) {
+          let x = j * spacingX;
+          let y = i * spacingY;
+          lines.push(new WaveLine(x, y, spacingX * 0.8));
+        }
+      }
+    }
+
+    class WaveLine {
+      constructor(x, y, length) {
+        this.originX = x;
+        this.originY = y;
+        this.x1 = x - length / 2;
+        this.y1 = y;
+        this.x2 = x + length / 2;
+        this.y2 = y;
+        this.length = length;
+        this.angleOffset = random(TWO_PI);
+        this.waveIntensity = 0;
+      }
+
+      update(mx, my) {
+        let d = dist(mx, my, this.originX, this.originY);
+        if (d < 150) {
+          this.waveIntensity = sin(frameCount * 0.1 + this.angleOffset) * d * waveFactor;
+        }
+        this.waveIntensity *= decay;
+        let angle = sin(frameCount * 0.05 + this.angleOffset) * this.waveIntensity;
+        let targetX1 = this.originX - this.length / 2 + cos(angle) * this.length * 0.3;
+        let targetY1 = this.originY + sin(angle) * 10;
+        let targetX2 = this.originX + this.length / 2 - cos(angle) * this.length * 0.3;
+        let targetY2 = this.originY - sin(angle) * 10;
+        this.x1 = lerp(this.x1, targetX1, 0.1);
+        this.y1 = lerp(this.y1, targetY1, 0.1);
+        this.x2 = lerp(this.x2, targetX2, 0.1);
+        this.y2 = lerp(this.y2, targetY2, 0.1);
+      }
+
+      display() {
+        line(this.x1, this.y1, this.x2, this.y2);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      adjustGrid();
+      initLines();
+    }
+  </script>
+  
+  
 </body>
 </html>

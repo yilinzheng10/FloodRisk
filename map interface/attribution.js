@@ -1,52 +1,75 @@
 const mapboxToken = "pk.eyJ1IjoicXVpeWlsIiwiYSI6ImNsemoxNHlhMTBsa2UyaXByd3pvcjM4ZjgifQ.JTxA-uHyVmgrVrRoNJiAyA";
 
-// Retrieve coordinates and address from URL
-const urlParams = new URLSearchParams(window.location.search);
-const lat = parseFloat(urlParams.get('lat')) || 40.7128;
-const lng = parseFloat(urlParams.get('lng')) || -74.0060; 
-const address = urlParams.get('address') || 'Unknown Address';
+// Fallback defaults (in case the sheet fetch fails)
+const defaultLat = 40.7128;
+const defaultLng = -74.0060;
+const defaultAddress = "Unknown Address";
 
-// Debugging: Log the retrieved address
-console.log("Retrieved Address:", `"${address}"`);
-
-// Dynamically insert the address into the #location-display section
-document.getElementById('location-display').innerHTML = `
-    <div style="font-size: 18px">
-        <span>Location :</span> <br> <span>${address}</span>
-    </div>
-`;
-
-const blackIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png',
-    iconSize: [25, 41], 
-    iconAnchor: [12, 41], // Position relative to its location
-    popupAnchor: [1, -34], // Position where the popup opens
-    shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-    shadowSize: [41, 41], 
-    shadowAnchor: [12, 41]
-});
-
-// NYC extent
+// Create the map with fallback coordinates so that the map is available immediately
 const nycBounds = [[40.4774, -74.2591], [40.9176, -73.7004]];
-
 const map = L.map('map', {
-    maxBounds: nycBounds,
-    maxZoom: 18,
-    minZoom: 10
-}).setView([lat, lng], 14);
+  maxBounds: nycBounds,
+  maxZoom: 18,
+  minZoom: 10
+}).setView([defaultLat, defaultLng], 14);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/quiyil/cm2m8fdnz001x01qj75tm3xod/tiles/{z}/{x}/{y}?access_token=' + mapboxToken, {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    tileSize: 512,
-    zoomOffset: -1
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+  tileSize: 512,
+  zoomOffset: -1
 }).addTo(map);
 
-// Add marker
-L.marker([lat, lng], { icon: blackIcon }).addTo(map);
+// Declare blackIcon (used for markers)
+const blackIcon = L.icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png',
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+  shadowSize: [41, 41],
+  shadowAnchor: [12, 41]
+});
+
+// Fetch the latest address from your Google Sheet (via Google Apps Script)
+fetch("https://script.google.com/macros/s/AKfycbwhTHTkZyDpBtv5Tss9KBSEldLUY9mDsHLZOmX5CWDbufchowmj4F5xDufOBqwMioNStQ/exec")
+  .then(response => response.json())
+  .then(data => {
+    console.log("Google Sheet Data:", data);
+    // Assume the latest entry is the last element in the returned array
+    const latestEntry = data[data.length - 1] || {};
+    const latestAddress = latestEntry.Location || defaultAddress;
+    
+    // Update the location display with the fetched address
+    document.getElementById('location-display').innerHTML = `
+      <div class="highlight" style="font-size: 15px">
+        <span>${latestAddress}</span>
+      </div>
+    `;
+    
+    // Use Mapbox's geocoding API to get coordinates for the latest address
+    const geocodeUrl = `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURIComponent(latestAddress)}.json?access_token=${mapboxToken}`;
+    return fetch(geocodeUrl);
+  })
+  .then(response => response.json())
+  .then(geocodeData => {
+    if (geocodeData.features && geocodeData.features.length > 0) {
+      // Get coordinates from the geocode result
+      const [lng, lat] = geocodeData.features[0].geometry.coordinates;
+      // Update the map view to center on the new coordinates
+      map.setView([lat, lng], 14);
+      // Add a marker for the latest address
+      L.marker([lat, lng], { icon: blackIcon })
+        .addTo(map)
+        .bindPopup(`Flood Risk: (data not available)`);
+    } else {
+      console.warn("No geocode results for the latest address. Using fallback coordinates.");
+    }
+  })
+  .catch(error => console.error("Error fetching or geocoding the latest address:", error));
 
 document.addEventListener("DOMContentLoaded", function () {
     //building age
-    fetch("processed_geojson/buildingAge_data.geojson")
+    fetch("../../buildingAge_data.geojson")
         .then(response => response.json())
         .then(buildingAgeData => {
             if (!buildingAgeData || !buildingAgeData.features) {

@@ -1,36 +1,28 @@
 /* toolscripts.js */
 
 document.addEventListener("DOMContentLoaded", function () {
-    const sections = document.querySelectorAll("section");
-    const options = {
-        root: null,
-        threshold: 0.5,
+    // Observer for animating elements on scroll with a lower threshold
+    const observerOptions = {
+        threshold: 1.0
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    const animateObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("visible");
+                console.log("Animating element:", entry.target);
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Animate only once per element
             }
         });
-    }, options);
+    }, observerOptions);
 
-    sections.forEach((section) => {
-        observer.observe(section);
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        animateObserver.observe(el);
     });
 
-    // Button for exploring the map
+    // Button actions
     document.querySelector(".btn-primary").addEventListener("click", () => {
-        //open the interface
         window.location.href = "map interface/questions.html";
-        
-        // Scroll to the section
-        // const mapContainer = document.querySelector(".solutions");
-        //  if (mapContainer) {
-        //    mapContainer.scrollIntoView({ behavior: "smooth" });
-        //   else {
-        //    console.error("Error: .map-container section not found.");
-        //  }
     });
 
     document.querySelector(".btn-secondary").addEventListener("click", () => {
@@ -40,5 +32,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".btn-about").addEventListener("click", () => {
         window.location.href = "intro.html";
     });
-    
 });
