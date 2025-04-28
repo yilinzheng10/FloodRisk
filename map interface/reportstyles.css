@@ -1,10 +1,13 @@
-/* Reset & base */
+/* ────────────────────────────────────────────────────
+   Reset & base
+──────────────────────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* Ensure the p5.js canvas is positioned behind all content */
+
+/* p5.js canvas behind content */
 #defaultCanvas0 {
   position: fixed;
   top: 0;
@@ -14,34 +17,36 @@
 
 body {
   font-family: "Helvetica Neue", sans-serif;
-  color: #000; /* changed from light (#eee) to black */
+  color: #000;
   padding: 60px;
   line-height: 1.5;
 }
 
 .first {
   display: flex;
-  flex-direction: column; /* Stacks children vertically */
-  justify-content: center; /* Center vertically */
-  align-items: left;     /* Center horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   text-align: left;
   height: 100vh;
 }
 
 .first h1 {
-  font-size: 7rem; /* Adjusted for better visibility */
-  margin-bottom: 5px;       /* smaller bottom margin */
-  line-height: 0.85;         /* reduce the space between lines */
-  letter-spacing: 0.6px;    /* reduce the space between letters */
+  font-size: 7rem;
+  margin-bottom: 5px;
+  line-height: 0.85;
+  letter-spacing: 0.6px;
 }
 
-/* Back button */
+/* ────────────────────────────────────────────────────
+   Back button
+──────────────────────────────────────────────────── */
 .back-button {
   position: fixed;
   top: 20px;
   left: 20px;
   background-color: #FF5722;
-  color: #000; /* changed from white (#fff) to black */
+  color: #000;
   border: none;
   border-radius: 5px;
   padding: 10px 15px;
@@ -49,14 +54,18 @@ body {
   cursor: pointer;
   z-index: 1000;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 .back-button:hover {
   background-color: #E64A19;
 }
 
+/* ────────────────────────────────────────────────────
+   Page heading
+──────────────────────────────────────────────────── */
 .page-heading {
   padding-top: 20px;
-  color: #F7591D
+  color: #F7591D;
 }
 .page-heading h1 {
   font-size: 2rem;
@@ -67,15 +76,24 @@ body {
   font-size: 1rem;
 }
 
+/* ────────────────────────────────────────────────────
+   Section & Cards baseline
+──────────────────────────────────────────────────── */
 .section {
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: 100%; /* Ensure width is clearly defined */
+  width: 100%;
 }
 
-.card1, .card2, .card3 {
-  background: #E2E8F0;
+.card2 ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.card1, .card2, .card3, .card4 {
+  background: #e9edf1;
   border-radius: 20px;
   padding: 50px;
 }
@@ -85,104 +103,397 @@ body {
   flex-direction: column;
 }
 
-#map {
-  height: 600px;
-  width: 100%;
+/* ────────────────────────────────────────────────────
+   Tab Bar (.card4)
+──────────────────────────────────────────────────── */
+.card4 .tabs {
+  display: flex;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 0.5rem 0.5rem 0 0;
+  gap: 0.5rem;
+  padding: 0.25rem 1rem;
 }
-.highlight {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #000000;
-  margin: 15px 0;
-}
-.difference {
-  color: #FF5722;
-  font-weight: 600;
-}
-.difference-pos {
-  color: #4caf50;
-  font-weight: 600;
-}
-.insight-box {
-  background: #fff; /* changed from dark (#1a1a1a) to white */
-  border-left: 4px solid #FF5722;
-  padding: 10px;
-  margin-top: 15px;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-.insight-box strong {
-  color: #FF5722;
-}
-
-
-/* Footer Buttons */
-.footer-buttons {
-  text-align: center;
-  margin-top: 50px;
-}
-.footer-buttons button {
-  color: #ffffff;
+.card4 .tabs button {
+  flex: 0 0 auto;
+  padding: 0.4rem 0.8rem;
+  background: none;
   border: none;
-  border-radius: 20px;
-  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6b7280;
+  transition: color .2s;
+  min-width: 0;
+}
+.card4 .tabs button:hover {
+  color: #111827;
+}
+.card4 .tabs button.active {
+  color: #111827;
+  font-weight: 600;
+  border-bottom: 3px solid #3b82f6;
+  background-color: #fff;
+}
+
+/* ────────────────────────────────────────────────────
+   Tab Content
+──────────────────────────────────────────────────── */
+.card4 .tab-content {
+  display: none;
+}
+.card4 .tab-content.active {
+  display: block;
+}
+
+/* ────────────────────────────────────────────────────
+   Two-column grid inside .card4
+──────────────────────────────────────────────────── */
+.card4 .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.card4 .card {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  padding: 1rem 1.25rem;
+}
+
+/* Definition lists in mini-cards */
+.card4 dl {
+  margin-top: 0.75rem;
+}
+.card4 dt {
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 0.75rem;
+}
+.card4 dd {
+  margin: 0.25rem 0 0 0;
+  color: #111827;
+}
+
+/* Note box */
+.card4 .note {
+  background-color: #fffbeb;
+  border-left: 4px solid #f59e0b;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  margin-top: 1rem;
+  color: #92400e;
+}
+
+/* ────────────────────────────────────────────────────
+   Mitigation Overview Card
+──────────────────────────────────────────────────── */
+.mitigation-overview {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.mitigation-overview h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.mitigation-overview .subheading {
   font-size: 1rem;
-  cursor: pointer;
-  margin: 0 10px;
-  transition: background 0.3s ease;
+  font-weight: 400;
+  color: #6b7280;
+  margin-bottom: 1rem;
 }
-.footer-buttons button:hover {
-  background: #e64a19;
+.mitigation-overview .mit-overview-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1rem;
 }
-
-.attribution {
-  background-color: #F7591D;
-  color: #fff; 
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.mitigation-overview .risk-number,
+.mitigation-overview .premium-number {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
-.attribution:hover {
-  background-color: #E64A19;
+.mitigation-overview .risk-number {
+  color: #dc2626;
 }
 
+/* ────────────────────────────────────────────────────
+   Strategies Grid & Cards
+──────────────────────────────────────────────────── */
+.measures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 1rem;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+.card4 .measure-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+.card4 .measure-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.card4 .badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  vertical-align: middle;
+}
+.card4 .badge.low  { background: #e6ffed; color: #065f46; }
+.card4 .badge.med  { background: #fffbeb; color: #92400e; }
+.card4 .badge.high { background: #fee2e2; color: #991b1b; }
+
+/* Remove bullets inside .card4 lists */
+.card4 ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* ────────────────────────────────────────────────────
+   Assistance Programs
+──────────────────────────────────────────────────── */
+.assistance-programs {
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.assistance-programs h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+.assistance-programs .subheading {
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+.program-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.program-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  background: #fafafa;
+}
+.program-info h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+.program-info p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Assistance buttons use .button style */
+.program-item .button {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* “View All” button */
+.program-footer {
+  text-align: right;
+  margin-top: 1.5rem;
+}
+.program-footer .button {
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+}
+
+/* ────────────────────────────────────────────────────
+   Neighborhood Bars & Insight
+──────────────────────────────────────────────────── */
+.card4 .bar-chart {
+  margin-top: 1rem;
+}
+.card4 .bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+.card4 .bar-label {
+  flex: 0 0 140px;
+  color: #374151;
+}
+.card4 .bar {
+  flex: 1;
+  height: 0.75rem;
+  background: #e5e7eb;
+  border-radius: 0.375rem;
+  margin: 0 0.75rem;
+  overflow: hidden;
+}
+.card4 .bar-inner {
+  height: 100%;
+  border-radius: 0.375rem;
+}
+.card4 .bar-value {
+  flex: 0 0 50px;
+  text-align: right;
+  font-weight: 600;
+}
+.card4 .bar-inner:nth-child(1) { background: #dc2626; }
+.card4 .bar-inner:nth-child(2) { background: #f97316; }
+.card4 .bar-inner:nth-child(3) { background: #fbbf24; }
+.card4 .bar-inner:nth-child(4) { background: #16a34a; }
+
+.card4 .insight {
+  background-color: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  margin-top: 1rem;
+  color: #1e3a8a;
+}
+.card4 #location-display {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ────────────────────────────────────────────────────
+   Buttons (global)
+──────────────────────────────────────────────────── */
 .button {
-  background-color: #000000;
-  color: #fff; 
+  display: inline-block;
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px 15px;
   font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color .3s ease;
+  text-align: center;
 }
 .button:hover {
   background-color: #E64A19;
 }
 
-#floodMap {
+/* Restore Explore More button */
+.attribution {
+  background-color: #F7591D;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color .3s ease;
+}
+.attribution:hover {
+  background-color: #E64A19;
+}
+
+/* ────────────────────────────────────────────────────
+   Map container styling
+──────────────────────────────────────────────────── */
+.card3 {
+  display: flex;
+  flex-direction: column;
+}
+#floodMap, #map {
   width: 100%;
-  height: 600px; /* Match this to your original inline styling preference */
-  border-radius: 15px; /* optional */
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.leaflet-container {
+  border-radius: inherit;
 }
 
-/* --- Scroll Animation --- */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease-out, transform 2s ease-out;
-}
-
-.animate-on-scroll.animate {
-  opacity: 1;
-  transform: translateY(0);
+/* ────────────────────────────────────────────────────
+   Text utilities
+──────────────────────────────────────────────────── */
+.highlight {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #000;
+  margin: 15px 0;
 }
 
 .highlight_text {
-  padding: 10px 10px;
+  padding: 10px;
   font-weight: bold;
   border-radius: 20px;
+}
+
+/* ────────────────────────────────────────────────────
+   Difference indicators
+──────────────────────────────────────────────────── */
+.difference {
+  color: #FF5722;
+  font-weight: 600;
+}
+
+.difference-pos {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+/* ────────────────────────────────────────────────────
+   Insight‐box (outside of card4)
+──────────────────────────────────────────────────── */
+.insight-box {
+  background: #fff;
+  border-left: 4px solid #FF5722;
+  padding: 10px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.insight-box strong {
+  color: #FF5722;
+}
+
+/* ────────────────────────────────────────────────────
+   Legend control styling
+──────────────────────────────────────────────────── */
+.info.legend {
+  background: rgba(255, 255, 255, 0.54);
+  padding: 6px 8px;
+  font: 14px/16px Helvetica, sans-serif;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.info.legend h4 {
+  margin: 0 0 5px;
+  font-size: 16px;
+}
+
+.info.legend i {
+  border: 1px solid #999;
+}
+
+/* ────────────────────────────────────────────────────
+   Footer buttons container
+──────────────────────────────────────────────────── */
+.footer-buttons {
+  text-align: center;
+  margin-top: 50px;
 }

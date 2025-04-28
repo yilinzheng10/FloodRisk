@@ -7,94 +7,80 @@
     <style>
       body {
         margin: 0;
-        background: #000;
-        color: #fff;
-        font-family: monospace;
+        background: white;
+        color: #111;
+        font-family: Helvetica, sans-serif;
       }
       svg {
         width: 100vw;
         height: 100vh;
       }
       .link {
-        stroke: #999;
-        stroke-opacity: 0.6;
+        stroke: #bbb;
+        stroke-opacity: 0.7;
       }
       .node circle {
-        stroke: #fff;
+        stroke: #333;
         stroke-width: 1.5px;
       }
       .node text {
         pointer-events: none;
-        font: 10px monospace;
-        fill: white;
+        font: 10px;
+        fill: #222;
       }
-      /* Left-side Top Section: Buttons & Overview */
+      .node:hover circle {
+        transform: scale(1.1);
+        filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.2));
+        transition: all 0.3s ease;
+      }
       #topLeft {
         position: fixed;
         top: 10px;
         left: 10px;
         width: 322px;
         z-index: 10000;
-        font-family: monospace;
       }
-
       .btn-primary:hover {
-        background-color: #E64A19; /* Darker orange on hover */
-        transform: scale(1.05); /* Slightly enlarge on hover */
+        background-color: #d84315;
+        transform: scale(1.05);
       }
       .btn-primary {
         padding: 10px 30px;
-        background-color: #FF5722; /* Button color (bright orange) */
-        color: white; /* Text color */
-        border: none; 
-        border-radius: 15px; 
-        font-family: monospace;
-        font-size: 15px; /* Font size */
-        letter-spacing: 0.75px;
-        cursor: pointer; /* Pointer cursor on hover */
-        transition: all 0.3s ease; /* Smooth hover transition */
-        margin-bottom: 10px;
-      }
-      .btn-secondary:hover {
-        background-color: #E64A19; /* Darker orange on hover */
-        transform: scale(1.05); /* Slightly enlarge on hover */
-      }
-      .btn-secondary {
-        padding: 10px 30px;
-        margin: 10px;
-        background: transparent;
+        background-color: #ff7043;
         color: white;
-        border: none; 
-        font-family: monospace;
+        border: none;
+        border-radius: 15px;
+        font-size: 15px;
+        letter-spacing: 0.75px;
+        cursor: pointer;
+        transition: all 0.3s ease;
         margin-bottom: 10px;
-        width: 300px;
       }
       .overview {
         padding: 10px;
-        border: 1px solid white;
-        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #ccc;
+        background: rgba(0,0,0,0.04);
+        color: #111;
       }
-      .overview h4 {
-        margin: 0 0 5px;
-      }
-      .overview p {
+      .overview h4, .overview p {
         margin: 0;
-        font-size: 13px;
+        font-size: 14px;
       }
-      /* Left-side Menu */
       #menu {
         position: fixed;
         top: 300px;
         left: 10px;
         width: 300px;
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid white;
+        background: rgba(0,0,0,0.04);
+        border: 1px solid #ccc;
         padding: 10px;
         z-index: 10000;
+        color: #111;
+        font-size: 14px;
       }
       #menu h4 {
         margin: 0 0 5px;
-      }      
+      }
       #menu ul {
         list-style: none;
         margin: 0;
@@ -104,24 +90,24 @@
         margin-bottom: 5px;
       }
       #menu a {
-        color: white;
+        color: #1565c0;
         text-decoration: none;
         cursor: pointer;
       }
       #menu a:hover {
-        color: lightblue;
+        color: #0d47a1;
       }
-      /* Force sliders */
       #controls {
         position: fixed;
         bottom: 10px;
         left: 10px;
         width: 300px;
-        background: rgba(255,255,255,0.1);
-        border: 1px solid white;
+        background: rgba(0,0,0,0.04);
+        border: 1px solid #ccc;
         padding: 10px;
         z-index: 10000;
-        font-family: monospace;
+        color: #111;
+        font-size: 14px;
       }
       #controls p, #controls label {
         margin: 5px 0;
@@ -131,7 +117,6 @@
         width: 30px;
         text-align: center;
       }
-      /* Slider styling: white track and thumb */
       #controls input[type="range"] {
         -webkit-appearance: none;
         width: 100%;
@@ -139,8 +124,8 @@
       }
       #controls input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
-        background: #fff;
-        border: 1px solid #ccc;
+        background: #555;
+        border: 1px solid #aaa;
         height: 16px;
         width: 16px;
         border-radius: 50%;
@@ -148,68 +133,59 @@
         margin-top: -5px;
       }
       #controls input[type="range"]::-webkit-slider-runnable-track {
-        background: #c9c9c9;
+        background: #ccc;
         height: 6px;
       }
       #controls input[type="range"]::-moz-range-thumb {
-        background: #fff;
-        border: 1px solid #ccc;
+        background: #555;
+        border: 1px solid #aaa;
         height: 16px;
         width: 16px;
         border-radius: 50%;
         cursor: pointer;
       }
       #controls input[type="range"]::-moz-range-track {
-        background: #fff;
+        background: #ccc;
         height: 6px;
       }
-      /* Tooltip styling */
       .tooltip {
         position: absolute;
-        background: rgba(255,255,255,0.9);
-        color: #000;
-        padding: 5px;
-        border: 1px solid #ccc;
+        background: rgba(0,0,0,0.85);
+        color: white;
+        padding: 6px 10px;
         border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        font: 12px;
+        max-width: 300px;
         pointer-events: none;
-        font: 12px monospace;
+        white-space: normal;
+        word-wrap: break-word;
       }
-      .tooltip {
-        position: absolute;
-        background: rgba(255,255,255,0.9);
-        color: #000;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        pointer-events: none;
-        font: 12px monospace;
-        max-width: 300px;       /* Limit the width */
-        white-space: normal;    /* Allow text to wrap */
-        word-wrap: break-word;  /* Ensure long words break */
-      }
-
     </style>
   </head>
   <body>
     <!-- Top left section: Buttons and Overview -->
     <div id="topLeft">
       <div class="buttons">
-        <button class="btn-primary">Back</button>
+        <button class="btn-primary">Home</button>
         <!--<button class="btn-secondary">View Tool that developed from this research.</button>-->
       </div>
       <div class="overview">
         <h4>Overview of Methodology</h4>
         <p>
-          This is a visualization of mixed-methods, system-oriented approaches:
-          1. user data collection, 2. public datasets, 3. explorational research, 4. real estate trends and technology.
-          Through these datasets, identify feedback mechanisms (rising insurance costs &gt; reduced property demand &gt; economic decline &gt; increased vulnerability), and identify existing issues: exploring and building meaningful features.
+          This is a visualization of mixed-methods, system-oriented approaches:<br>
+          1. understand user data<br> 
+          2. public datasets<br>
+          3. explorational research on flood risk<br>
+          4. real estate trends and technology<br>
+          Through these datasets, identify feedback mechanisms (rising insurance costs, reduced property demand, economic decline, increased vulnerability), and identify existing issues, exploring and building meaningful features.
         </p>
       </div>
     </div>
 
     <!-- Left-side Menu -->
     <div id="menu">
-    <h4>click to the feature</h4>
+    <h4>Click to the feature</h4>
       <ul>
         <li><a href="#" data-target="policyBox">Policy</a></li>
         <li><a href="#" data-target="newsBox">News + Media</a></li>
@@ -217,6 +193,42 @@
         <li><a href="#" data-target="impactDataBox">Scale of Impact</a></li>
         <li><a href="#" data-target="userPerceptionsBox">User Perceptions</a></li>
       </ul>
+    </div>
+    <!-- Reference Section -->
+    <div id="references" style="position: fixed; top: 10px; right: 10px; width: 300px; z-index: 10000;">
+      <button id="toggleReferences" style="background: #000000c3; color: white; border: none; padding: 8px 20px; font-size: 13px; border-radius: 20px; cursor: pointer; width: 100%;">
+        Show References
+      </button>
+      <div id="referenceContent" style="display: none; background: rgba(0,0,0,0.04); border: 1px solid #ccc; padding: 10px; margin-top: 10px; font-size: 13px; line-height: 1.5;">
+        <h4 style="margin-top: 0;">References by Feature</h4>
+        <strong>Policy</strong>
+        <ul>
+          <li><a href="https://www.enterprisecommunity.org/impact-areas/resilience/portfolio-protect" target="_blank">Enterprise Community Partners – Resilience</a></li>
+          <li><a href="https://www.mdpi.com/1911-8074/15/10/434" target="_blank">Financial Impact Research (MDPI Study)</a></li>
+        </ul>
+        <strong>News + Media</strong>
+        <ul>
+          <li><a href="https://www.ncei.noaa.gov/access/billions/" target="_blank">NOAA 2024 Billion Dollar Disasters</a></li>
+          <li><a href="https://hbr.org/2025/01/the-la-fires-could-change-the-insurance-industry" target="_blank">HBR - LA Wildfire Insurance Industry</a></li>
+        </ul>
+        <strong>Flood Losses Data</strong>
+        <ul>
+          <li><a href="https://levees.sec.usace.army.mil/map-viewer/index.html" target="_blank">USACE Levee Map Viewer</a></li>
+          <li><a href="https://msc.fema.gov/portal/home" target="_blank">FEMA Flood Map Service Center</a></li>
+          <li><a href="https://hazards.fema.gov/femaportal/kmz/NFHL_Google_Earth_Guide.pdf" target="_blank">FEMA NFHL KMZ Guide</a></li>
+        </ul>
+        <strong>Scale of Impact Data</strong>
+        <ul>
+          <li><a href="https://climate.cityofnewyork.us/challenges/extreme-rainfall/" target="_blank">NYC Stormwater Flood Map</a></li>
+          <li><a href="https://www.nyc.gov/html/sirr/downloads/pdf/360497NY-New-York-City.pdf" target="_blank">NYC SIRR Report (Resiliency Planning)</a></li>
+        </ul>
+        <strong>User Perceptions</strong>
+        <ul>
+          <li><a href="https://climatecheck.com/" target="_blank">ClimateCheck – Climate Risk Data</a></li>
+          <li><a href="https://docs.google.com/spreadsheets/d/1HKOsLh_ABl5GAOpvg9aUi4kkMcHB8a-neF-K_wR-tP8/edit?usp=sharing" target="_blank">Survey Data on Homebuyer Risk Perception</a></li>
+          <li><a href="https://yilinzheng10.github.io/MAPBOX-Storytelling/" target="_blank">Climate Gentrification Mapping Story</a></li>
+        </ul>
+      </div>
     </div>
 
     <!-- Force Sliders -->
@@ -300,6 +312,18 @@
     <svg></svg>
 
     <script>
+      const toggleButton = document.getElementById('toggleReferences');
+      const referenceContent = document.getElementById('referenceContent');
+
+      toggleButton.addEventListener('click', () => {
+        if (referenceContent.style.display === 'none') {
+          referenceContent.style.display = 'block';
+          toggleButton.textContent = 'Hide References';
+        } else {
+          referenceContent.style.display = 'none';
+          toggleButton.textContent = 'Show References';
+        }
+      });
       // Global force properties.
       let forceProperties = {
         center: { x: 0.5, y: 0.5 },
@@ -310,22 +334,30 @@
 
       // Map node IDs to distinctive colors.
       const branchColors = {
-        centerEllipseGroup: "#ffffff",         // Core: white
-        policyBox: "#0074D9",                    // Bold blue
-        policyParenBox: "#0074D9",
-        laInsuranceBox: "#0074D9",
-        newsBox: "#2ECC40",                      // Vivid green
-        newsParenBox: "#2ECC40",
-        "2024disasterBox": "#2ECC40",
-        floodDataBox: "#B10DC9",                 // Vivid purple
-        caseStudyBox: "#B10DC9",
-        gentrificationBox: "#B10DC9",
-        displacementBox: "#B10DC9",
-        impactDataBox: "#FF851B",                // Bold orange
-        userPerceptionsBox: "#FFDC00",           // Bright yellow
-        mediationBox: "#FFDC00",
-        coastalBox: "#FFDC00",
-        surveyBox: "#FFDC00"
+        centerEllipseGroup: "#1976D2",   // Soft strong blue (instead of bright white)
+        policyBox: "#64B5F6",             // Light blue
+        policyParenBox: "#64B5F6",
+        laInsuranceBox: "#64B5F6",
+        newsBox: "#81C784",               // Light green
+        newsParenBox: "#81C784",
+        "2024disasterBox": "#81C784",
+        floodDataBox: "#BA68C8",           // Light purple
+        caseStudyBox: "#BA68C8",
+        gentrificationBox: "#BA68C8",
+        displacementBox: "#BA68C8",
+        impactDataBox: "#FFB74D",          // Light orange
+        userPerceptionsBox: "#FFD54F",     // Light yellow
+        mediationBox: "#FFD54F",
+        coastalBox: "#FFD54F",
+        surveyBox: "#FFD54F",
+        enterpriseResilienceBox: "#90CAF9", // lighter blue
+        climateCheckBox: "#FFF59D",         // lighter yellow
+        usaceLeveeBox: "#CE93D8",            // lighter purple
+        femaFloodPortalBox: "#CE93D8",
+        femaNFHLBox: "#CE93D8",
+        nycStormwaterBox: "#FFE082",         // lighter orange
+        sirrNYCReportBox: "#FFE082",
+        mdpiFloodResearchBox: "#90CAF9"       // matches enterprise resilience
       };
 
       // Define nodes.
@@ -345,7 +377,15 @@
         { id: "caseStudyBox", label: "Case Study City: NYC", group: 2, link: "dataExplorer.html", modalContent: "New York City is used as a case study to illustrate urban flood risk and mitigation, integrating historical flood, infrastructure, and policy data to develop comprehensive urban risk assessments." },
         { id: "gentrificationBox", label: "Climate Gentrification", group: 3, link: "https://yilinzheng10.github.io/MAPBOX-Storytelling/" },
         { id: "displacementBox", label: "Displacement Data", group: 3, modalContent: "Displacement:\nFocusing on the long-term impacts of recurring flood events, this node uses census data, migration reports, and property loss statistics to assess community displacement and its socio-economic consequences." },
-        { id: "laInsuranceBox", label: "LA wild fire to\nInsurance Industry", group: 3, link: "https://hbr.org/2025/01/the-la-fires-could-change-the-insurance-industry", modalContent: "LA Wild Fire Impact on Insurance:\nAnalyzing the ripple effects of the LA wild fire on the insurance industry, this section examines premium adjustments, risk recalibration, and market responses post-disaster." }
+        { id: "laInsuranceBox", label: "LA wild fire to\nInsurance Industry", group: 3, link: "https://hbr.org/2025/01/the-la-fires-could-change-the-insurance-industry", modalContent: "LA Wild Fire Impact on Insurance:\nAnalyzing the ripple effects of the LA wild fire on the insurance industry, this section examines premium adjustments, risk recalibration, and market responses post-disaster." },
+        { id: "enterpriseResilienceBox", label: "Enterprise Resilience", group: 1, link: "https://www.enterprisecommunity.org/impact-areas/resilience/portfolio-protect" },
+        { id: "climateCheckBox", label: "ClimateCheck", group: 1, link: "https://climatecheck.com/" },
+        { id: "usaceLeveeBox", label: "USACE Levee Map", group: 1, link: "https://levees.sec.usace.army.mil/map-viewer/index.html" },
+        { id: "femaFloodPortalBox", label: "FEMA Flood Map Portal", group: 1, link: "https://msc.fema.gov/portal/home" },
+        { id: "nycStormwaterBox", label: "NYC Stormwater Map", group: 1, link: "https://climate.cityofnewyork.us/challenges/extreme-rainfall/" },
+        { id: "sirrNYCReportBox", label: "NYC SIRR Report", group: 1, link: "https://www.nyc.gov/html/sirr/downloads/pdf/360497NY-New-York-City.pdf" },
+        { id: "femaNFHLBox", label: "FEMA NFHL KMZ", group: 1, link: "https://hazards.fema.gov/femaportal/kmz/NFHL_Google_Earth_Guide.pdf" },
+        { id: "mdpiFloodResearchBox", label: "Financial Impact Research", group: 1, link: "https://www.mdpi.com/1911-8074/15/10/434" }
       ];
 
       // Define links.
@@ -366,14 +406,35 @@
         { source: "caseStudyBox", target: "gentrificationBox" },
         { source: "caseStudyBox", target: "displacementBox" },
         { source: "newsParenBox", target: "laInsuranceBox" },
-        { source: "policyParenBox", target: "laInsuranceBox" }
+        { source: "policyParenBox", target: "laInsuranceBox" },
+        { source: "policyBox", target: "enterpriseResilienceBox" },
+        { source: "userPerceptionsBox", target: "climateCheckBox" },
+        { source: "floodDataBox", target: "usaceLeveeBox" },
+        { source: "floodDataBox", target: "femaFloodPortalBox" },
+        { source: "floodDataBox", target: "femaNFHLBox" },
+        { source: "impactDataBox", target: "nycStormwaterBox" },
+        { source: "impactDataBox", target: "sirrNYCReportBox" },
+        { source: "policyBox", target: "mdpiFloodResearchBox" }
       ];
 
       const svg = d3.select("svg");
       const width = window.innerWidth;
       const height = window.innerHeight;
 
-      // Create a force simulation with adjustable forces.
+      // Zoom behavior
+      const zoom = d3.zoom()
+        .scaleExtent([0.5, 5])
+        .on("zoom", (event) => {
+          svg.select('g.zoomable').attr("transform", event.transform);
+        });
+
+      svg.call(zoom);
+
+      // Create a zoomable group
+      const zoomable = svg.append("g")
+        .attr("class", "zoomable");
+
+      // Create force simulation
       let simulation = d3.forceSimulation(nodes)
           .force("link", d3.forceLink(links)
             .id(d => d.id)
@@ -387,18 +448,18 @@
           .force("forceY", forceProperties.forceY.enabled
             ? d3.forceY(height * forceProperties.forceY.y).strength(forceProperties.forceY.strength)
             : null)
-          .force("collide", d3.forceCollide(50));
+          .force("collide", d3.forceCollide(60));
 
-      // Draw links.
-      const link = svg.append("g")
+      // Draw links
+      const link = zoomable.append("g")
           .attr("class", "links")
         .selectAll("line")
         .data(links)
         .enter().append("line")
           .attr("class", "link");
 
-      // Draw nodes.
-      const node = svg.append("g")
+      // Draw nodes
+      const node = zoomable.append("g")
           .attr("class", "nodes")
         .selectAll("g")
         .data(nodes)
@@ -408,33 +469,29 @@
               .on("drag", dragged)
               .on("end", dragended));
 
-      // Append circles (smaller nodes).
       node.append("circle")
-        .attr("r", d => 10 - d.group)  // New smaller radius values
+        .attr("r", d => 10 - d.group)
         .attr("fill", d => branchColors[d.id] || "#cccccc");
 
-      // Append text labels.
       node.append("text")
         .attr("dy", 3)
         .attr("x", 25)
         .text(d => d.label)
-        .style("fill", "white")
-        .style("font-size", "10px"); // Adjust text size as needed
+        .style("fill", "#222")
+        .style("font-size", "10px");
 
-
-      // Tooltip for hover – shows modalContent (or image content if you add that later)
+      // Tooltip
       const tooltip = d3.select("body")
         .append("div")
         .attr("class", "tooltip")
         .style("display", "none");
 
-      // Node hover event: show tooltip and add visual feedback.
       node.on("mouseover", function(event, d) {
         d3.select(this).select("circle")
           .transition().duration(200)
           .attr("stroke", "lightblue")
           .attr("stroke-width", 3);
-        
+
         let htmlContent = "";
         if(d.hoverImage) {
           htmlContent += `<img src="${d.hoverImage}" style="max-width:100%; display:block; margin-bottom:5px;">`;
@@ -442,7 +499,7 @@
         if(d.modalContent) {
           htmlContent += d.modalContent.replace(/\n/g, "<br>");
         }
-        
+
         if(htmlContent) {
           tooltip.html(htmlContent)
                 .style("left", (event.pageX + 10) + "px")
@@ -452,7 +509,7 @@
       })
       .on("mousemove", function(event, d) {
           tooltip.style("left", (event.pageX + 10) + "px")
-                 .style("top", (event.pageY + 10) + "px");
+                .style("top", (event.pageY + 10) + "px");
       })
       .on("mouseout", function(event, d) {
           d3.select(this).select("circle")
@@ -472,6 +529,7 @@
             .attr("y1", d => d.source.y)
             .attr("x2", d => d.target.x)
             .attr("y2", d => d.target.y);
+
         node.attr("transform", d => `translate(${d.x},${d.y})`);
       });
 
@@ -480,27 +538,46 @@
         d.fx = d.x;
         d.fy = d.y;
       }
+
       function dragged(event, d) {
         d.fx = event.x;
         d.fy = event.y;
       }
+
       function dragended(event, d) {
         if (!event.active) simulation.alphaTarget(0);
         d.fx = null;
         d.fy = null;
       }
 
-      // Menu function: center a node when clicked.
+      // 🆕 Updated: zoom into the clicked node from menu
       function zoomToGroup(targetId) {
         const target = nodes.find(n => n.id === targetId);
         if (target) {
           simulation.alpha(1).restart();
-          target.fx = width / 2;
-          target.fy = height / 2;
-          setTimeout(() => { target.fx = null; target.fy = null; }, 1000);
+
+          const zoomLevel = 1.5; // zoom level
+          const offsetX = width / 2 - target.x * zoomLevel;
+          const offsetY = height / 2 - target.y * zoomLevel;
+
+          svg.transition()
+            .duration(750)
+            .call(
+              zoom.transform,
+              d3.zoomIdentity.translate(offsetX, offsetY).scale(zoomLevel)
+            );
+
+          target.fx = width / 2 / zoomLevel;
+          target.fy = height / 2 / zoomLevel;
+
+          setTimeout(() => {
+            target.fx = null;
+            target.fy = null;
+          }, 1000);
         }
       }
 
+      // Setup left-side menu
       function setupMenu() {
         const menuLinks = document.querySelectorAll("#menu a");
         menuLinks.forEach(link => {
@@ -513,28 +590,32 @@
       }
       setupMenu();
 
-      // Update simulation forces based on slider changes.
+      // Update force settings from sliders
       function updateAll() {
         simulation.force("link")
           .distance(forceProperties.link.distance)
           .iterations(forceProperties.link.iterations);
+
         simulation.force("center", d3.forceCenter(width * forceProperties.center.x, height * forceProperties.center.y));
+
         if (forceProperties.forceX.enabled) {
           simulation.force("forceX", d3.forceX(width * forceProperties.forceX.x).strength(forceProperties.forceX.strength));
         } else {
           simulation.force("forceX", null);
         }
+
         if (forceProperties.forceY.enabled) {
           simulation.force("forceY", d3.forceY(height * forceProperties.forceY.y).strength(forceProperties.forceY.strength));
         } else {
           simulation.force("forceY", null);
         }
+
         simulation.alpha(1).restart();
       }
 
+      // Home button (go back)
       document.addEventListener("DOMContentLoaded", () => {
-        const backOption = document.querySelector('.btn-primary'); // returns a single element
-        
+        const backOption = document.querySelector('.btn-primary');
         backOption.addEventListener('click', () => {
           window.history.back();
         });

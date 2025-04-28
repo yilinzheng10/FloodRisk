@@ -45,26 +45,37 @@
 
   <div class="section">
     <div class="card1 animate-on-scroll">
-      <h3><em class="highlight">rarely</em> at risk.</h3>
+      <h2>Flood Risk Insight</h2>
+      <p style="color:#4b5563; margin-bottom:1rem;">
+        Based on your location in FEMA Zone AE, just 0.3 miles from the water at 3 ft elevation, this property ranks in 
+        the <strong>top 15% of at-risk homes in NYC</strong>. Anticipate increasing premiums and potential value shifts 
+        over the next decade.
+      </p>
+    </div>
+    
+    <!--<div class="card1 animate-on-scroll">
+      <div class="risk-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+        <span style="font-size:1.25rem; font-weight:700; color:#dc2626;">78/100</span>
+      </div>
+      <div class="risk-bar" style="background:#ffffff; border-radius:4px; overflow:hidden; height:12px; margin-bottom:0.75rem;">
+        <div style="width:78%; height:100%; background:#dc2626;"></div>
+      </div>
+      <h3><em class="highlight">high</em> at risk.</h3>
       <br>
-      <!-- Flood Risk Meter Placeholder SVG -->
+  
       <div class="flood-risk-meter">
         <svg width="220" height="120" viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg">
-          <!-- Gauge Arc (half circle from left to right) -->
           <path d="M 30,110 A 80,80 0 0,1 190,110" stroke="#444" stroke-width="10" fill="none"/>
-          <!-- Tick Marks -->
           <line x1="30" y1="110" x2="40" y2="110" stroke="#FF5722" stroke-width="2"/>
           <line x1="53.43" y1="53.43" x2="60.5" y2="60.5" stroke="#FF5722" stroke-width="2"/>
           <line x1="110" y1="30" x2="110" y2="40" stroke="#FF5722" stroke-width="2"/>
           <line x1="166.57" y1="53.43" x2="159.5" y2="60.5" stroke="#FF5722" stroke-width="2"/>
           <line x1="190" y1="110" x2="180" y2="110" stroke="#FF5722" stroke-width="2"/>
-          <!-- Tick Labels -->
           <text x="30" y="95" font-size="12" fill="#FF5722" text-anchor="middle">0%</text>
           <text x="53" y="38" font-size="12" fill="#FF5722" text-anchor="middle">25%</text>
           <text x="110" y="15" font-size="12" fill="#FF5722" text-anchor="middle">50%</text>
           <text x="167" y="38" font-size="12" fill="#FF5722" text-anchor="middle">75%</text>
           <text x="190" y="95" font-size="12" fill="#FF5722" text-anchor="middle">100%</text>
-          <!-- Needle for 5% (example) -->
           <line x1="110" y1="110" x2="62.44" y2="107" stroke="red" stroke-width="3"/>
           <circle cx="110" cy="110" r="4" fill="red"/>
           <text x="72" y="120" font-size="12" fill="red" text-anchor="middle">0.1%</text>
@@ -72,33 +83,245 @@
       </div>
       <h3>0.1% chance flood occurrence</h3>
 
-      <p>Based on historical flood data and flood risk model.</p>
+      <br><p style="color:#666; font-style: italic;">Based on historical flood data and flood risk model.</p>
       <div class="insight-box">
-        <strong>Insight</strong>: Your property is in a low-risk area and may have a higher value.
+        <strong>Insight</strong>: This property has a high flood risk score, placing it in the top 15% of at-risk properties in NYC.
       </div>
     </div>
+      -->
     
     <div class="card2 animate-on-scroll">
-      <h2>Predicted Market Price</h2>
+      <h2>Current Property Value</h2>
       <div class="highlight">$642,270</div>
+      
       <p class="difference-pos">$20,982 <span>(+2.8%)</span></p>
-      <br><br>
+      <hr style="border:none; border-top:1px solid #000000; margin:1rem 0;">
+
       <h2>Actual Property Cost</h2> 
       <div class="highlight">$611,175</div>
       <p class="difference">-$31,095 <span>(-3.1%)</span></p>
+
+      <hr style="border:none; border-top:1px solid #000000; margin:1rem 0;">
       <ul>
         <li>Property Insurance: $9,710.00</li>
-        <li>Flood Insurance: $881.00</li>
-        <li>Possible Flood Damage Cost: $21,000.00 for 2 feet of flood.</li>
+        <li>Flood Insurance: $1081.00</li>
+        <li>Possible Flood Damage Cost: $21,000.00 with 2 feet of flood.</li>
       </ul>
       <div class="insight-box">
         Based on all homes sold in the last 5 years.
       </div>
     </div>
 
+    <div class="card4 animate-on-scroll">
+      <!-- Tabs -->
+      <div class="tabs">
+        <button data-tab="property" class="active">Property Details</button>
+        <button data-tab="mitigation">Mitigation Options</button>
+        <button data-tab="neighborhood">Neighborhood Analysis</button>
+      </div>
+
+      <!-- Property Details Pane -->
+      <div id="property" class="tab-content active">
+        <div class="grid-2">
+          <!-- Property Info Card -->
+          <div class="card">
+            <h2>Property Information</h2>
+            <div id="location-display">
+              <!-- Address will be inserted here -->
+            </div>
+            <dl>
+              <dt>Property Type</dt><dd>Single Family Home</dd>
+              <dt>Square Feet</dt><dd>1,900</dd>
+              <dt>Year Built</dt><dd>1985</dd>
+              <dt>Bedrooms/Bathrooms</dt><dd>3 bed / 2 bath</dd>
+              <dt>Current Estimated Value</dt><dd>$642,270</dd>
+            </dl>
+          </div>
+
+          <!-- Flood Risk Details Card -->
+          <div class="card">
+            <h2>Flood Risk Details</h2>
+            <dl>
+              <dt>FEMA Flood Zone</dt><dd style="color:#d9534f;">AE (High Risk)</dd>
+              <dt>Elevation</dt><dd>3 ft above sea level</dd>
+              <dt>Distance to Water</dt><dd>0.3 miles</dd>
+              <dt>Historical Floods</dt><dd>3 events since 2012</dd>
+            </dl>
+            <dt>Building Characteristics</dt>
+            <ul>
+              <li>No basement</li>
+              <li>First floor: 1 ft above grade</li>
+              <li>Pre-FIRM construction</li>
+              <li>No flood vents</li>
+            </ul>
+            <div class="note">
+              This property was built before FEMA flood maps were established (Pre-FIRM), which may impact insurance rates and eligibility for certain mitigation programs.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mitigation Options Pane -->
+      <div id="mitigation" class="tab-content">
+        <div class="card">
+
+          <div class="card mitigation-overview">
+            <h2>Mitigation Measures</h2>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <div>
+                <strong>Current Risk Score</strong><br>
+                <span style="font-size:1.5rem; color:#d9534f;">78/100</span>
+              </div>
+              <div>
+                <strong>Current Insurance Premium</strong><br>
+                <span style="font-size:1.5rem;">$1081.00/year</span>
+              </div>
+            </div>
+            <div class="insight">
+              Implementing recommended measures below could reduce your risk score.
+            </div>
+          </div>
+          
+          <!-- Three Measure Cards -->
+          <div class="measures">
+            <div class="measure-card">
+              <h4>Elevate Utilities <span class="badge med">Medium Difficulty</span></h4>
+              <p>Raise HVAC, water heater, and electrical systems above base flood elevation.</p>
+              <ul>
+                <li>Estimated Cost: $5,000–$10,000</li>
+                <li>Insurance Savings: <span style="color:green;">$300/year</span></li>
+                <li>ROI Period: 6–12 years</li>
+              </ul>
+            </div>
+            <div class="measure-card">
+              <h4>Install Flood Vents <span class="badge low">Low Difficulty</span></h4>
+              <p>Add engineered flood vents to allow water to flow through enclosed areas.</p>
+              <ul>
+                <li>Estimated Cost: $2,000–$4,000</li>
+                <li>Insurance Savings: <span style="color:green;">$200/year</span></li>
+                <li>ROI Period: 3–7 years</li>
+              </ul>
+            </div>
+            <div class="measure-card">
+              <h4>Waterproof Basement/Foundation <span class="badge med">Medium Difficulty</span></h4>
+              <p>Apply waterproof coatings and install drainage systems.</p>
+              <ul>
+                <li>Estimated Cost: $3,000–$8,000</li>
+                <li>Insurance Savings: <span style="color:green;">$100/year</span></li>
+                <li>ROI Period: 7–20 years</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Available Assistance Programs -->
+          <div class="assistance-programs">
+            <h3>Available Assistance Programs</h3>
+            <p class="subheading">Financial assistance and grants for flood mitigation</p>
+
+            <div class="program-list">
+              <div class="program-item">
+                <div class="program-info">
+                  <h4>FEMA Flood Mitigation Assistance</h4>
+                  <p>Federal grants for flood mitigation projects</p>
+                </div>
+                <!-- FEMA link -->
+                <a
+                  href="https://www.fema.gov/grants/mitigation/learn/flood-mitigation-assistance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                >
+                  Check Eligibility
+                </a>
+              </div>
+
+              <div class="program-item">
+                <div class="program-info">
+                  <h4>NYC Build It Back Program</h4>
+                  <p>City assistance for flood-prone properties</p>
+                </div>
+                <!-- NYC link -->
+                <a
+                  href="https://www.nyc.gov/site/housingrecovery/resources/build-it-back.page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                >
+                  Check Eligibility
+                </a>
+              </div>
+
+              <div class="program-item">
+                <div class="program-info">
+                  <h4>NY Rising Community Reconstruction</h4>
+                  <p>State funding for community resilience</p>
+                </div>
+                <!-- NY Rising link -->
+                <a
+                  href="https://hcr.ny.gov/resilient-homes-communities-ny-rising-community-reconstruction-community-plans"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="button"
+                >
+                  Check Eligibility
+                </a>
+              </div>
+            </div>
+
+            <div class="program-footer">
+              <a
+                href="https://www.dfs.ny.gov/consumers/disaster_flood"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button"
+              >
+                View All Assistance Programs →
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Neighborhood Analysis Pane -->
+      <div id="neighborhood" class="tab-content">
+        <div class="card">
+          <h2>Neighborhood Flood Risk Comparison</h2>
+          <p style="color:#666;">How your property compares to others in Red Hook</p>
+
+          <!-- Bars -->
+          <div class="bar-chart">
+            <div class="bar-row">
+              <div class="bar-label">Your Property</div>
+              <div class="bar"><div class="bar-inner" style="width:78%; background:#d9534f;"></div></div>
+              <div class="bar-value" style="color:#d9534f;">78/100</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Neighborhood Average</div>
+              <div class="bar"><div class="bar-inner" style="width:65%; background:#f0ad4e;"></div></div>
+              <div class="bar-value" style="color:#f0ad4e;">65/100</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">Borough Average</div>
+              <div class="bar"><div class="bar-inner" style="width:48%; background:#ffd700;"></div></div>
+              <div class="bar-value" style="color:#ffd700;">48/100</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-label">NYC Average</div>
+              <div class="bar"><div class="bar-inner" style="width:35%; background:#5cb85c;"></div></div>
+              <div class="bar-value" style="color:#5cb85c;">35/100</div>
+            </div>
+          </div>
+
+          <div class="insight">
+            Your property has a higher flood risk than 82% of properties in Red Hook. The neighborhood as a whole has seen increasing flood events, with 3 major floods in the past 10 years compared to 1 in the previous decade.
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="card3 animate-on-scroll">
-      <h3>Risk Perception</h3><br>
-      <p>How do homeowners perceive flood risk in your area?</p><br>
+      <h2>Neighbor Risk Perception</h2><br>
+      <p>How do other perspective homeowners perceive flood risk in your area?</p><br>
       <!-- The floodmap will be placed inside this card -->
       <div id="floodMap"></div>
     </div>
@@ -109,8 +332,8 @@
   <div class="footer-buttons animate-on-scroll">
     <button class="attribution">Explore More Information</button>
     <button class="button" id="home-button">Home</button>
-    <button class="button" id="downloadBtn">Download</button>
-    <button class="button" id="emailBtn">Email to me</button>
+    <button class="button" id="downloadBtn">Export PDF</button>
+    <button class="button" id="emailBtn">Share Report</button>
   </div>
 
   <script src="reportscript.js"></script>
